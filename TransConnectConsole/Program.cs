@@ -1,3 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿namespace TransConnectConsole;
 
-Console.WriteLine("Hello, World!");
+static class Program
+{
+    static void Main()
+    {
+        
+    }
+}
