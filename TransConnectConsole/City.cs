@@ -1,10 +1,11 @@
+using GraphLib;
 namespace TransConnectConsole;
 
 public class City : Node
 {
     private string _name;
 
-    public City(string name)
+    public City(List<Node> edges, string name) : base(edges)
     {
         _name = name;
     }

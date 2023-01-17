@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransConnectConsole", "TransConnectConsole\TransConnectConsole.csproj", "{5DA860F4-ACD8-40F8-A2A3-3F2204D2B8DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphLib", "GraphLib\GraphLib.csproj", "{F28CB143-F698-4B17-A0C1-48E0346B0337}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{5DA860F4-ACD8-40F8-A2A3-3F2204D2B8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DA860F4-ACD8-40F8-A2A3-3F2204D2B8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DA860F4-ACD8-40F8-A2A3-3F2204D2B8DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F28CB143-F698-4B17-A0C1-48E0346B0337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F28CB143-F698-4B17-A0C1-48E0346B0337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F28CB143-F698-4B17-A0C1-48E0346B0337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F28CB143-F698-4B17-A0C1-48E0346B0337}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
