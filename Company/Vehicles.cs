@@ -1,4 +1,4 @@
-namespace TransConnectConsole;
+namespace Company;
 
 public enum VehicleType
 {

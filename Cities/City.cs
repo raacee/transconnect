@@ -1,5 +1,4 @@
-using GraphLib;
-namespace TransConnectConsole;
+namespace GraphLib;
 
 public class City : Node
 {

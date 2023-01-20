@@ -1,4 +1,6 @@
-namespace TransConnectConsole;
+using TransConnectConsole;
+
+namespace Company;
 
 public class Order
 {
