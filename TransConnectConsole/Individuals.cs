@@ -21,6 +21,8 @@ public abstract class Person
         _email = email;
     }
 
+    #region Properties
+    
     public string Email
     {
         get => _email;
@@ -62,6 +64,9 @@ public abstract class Person
         get => _ssNum;
         set => _ssNum = value ?? throw new ArgumentNullException(nameof(value));
     }
+    
+    #endregion
+    
 }
 
 public class Employee : Person
