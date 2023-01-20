@@ -1,0 +1,110 @@
+{
+  "name": "Mr Dupond",
+  "position": "Directeur Général",
+  "subalternes": [
+    {
+      "name" : "Mme Fiesta",
+      "position": "Directrice Commerciale",
+      "subalternes": [
+        {
+          "name": "Mr Forge",
+          "position" : "Commercial",
+          "subalternes" : []
+        },
+        {
+          "name" : "Mme Fermi",
+          "position": "Commercial",
+          "subalternes" : []
+        }
+      ]
+    },      
+    {
+      "name": "Mr Fetard",
+      "position": "Directeur des operations",
+      "subalternes": [
+        {
+          "name": "Mr Royal",
+          "position": "Chef Equipe",
+          "subalternes": [
+            {
+              "name": "Mr Romu",
+              "position": "Chauffeur",
+              "subalternes": []
+            },
+            {
+              "name": "Mme Romi",
+              "position": "Chauffeur",
+              "subalternes": []
+            },
+            {
+              "name": "Mr Roma",
+              "position": "Chauffeur",
+              "subalternes": []
+            }
+          ]
+        },
+        {
+          "name": "Mme Prince",
+          "position" : "Chef Equipe",
+          "subalternes": [
+            {
+              "name": "Mr Rome",
+              "position": "Chauffeur",
+              "subalternes": []
+            },
+            {
+              "name": "Mme Rimou",
+              "position": "Chauffeur",
+              "subalternes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mme Joyeuse",
+      "position": "Directrice des RH",
+      "subalternes": [
+        {
+          "name": "Mme Couleur",
+          "position": "Formation",
+          "subalternes": []
+        },
+        {
+          "name": "Mr ToutleMonde",
+          "position": "Contrats",
+          "subalternes": []
+        }
+      ]
+    },
+    {
+      "name": "Mr GripSous",
+      "positions": "Directeur Financier",
+      "subalternes": [
+        {
+          "name": "Mr Picsou",
+          "position": "Direction comptable",
+          "subalternes": [
+            {
+              "name": "Mme Fournier",
+              "position": "Comptable",
+              "subalternes": []
+            },
+            {
+              "name": "Mme Gautier",
+              "position": "Comptable",
+              "subalternes": []
+            }
+          ]
+        },
+        {
+          "name": "Mr GrosSous",
+          "position": "Controleu de gestion",
+          "subalternes": []
+        }
+      ]
+    }
+  ] 
+}
+        
+
