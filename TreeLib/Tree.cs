@@ -46,4 +46,19 @@ class Tree {
         }
         return null;
     }
+    
+    public void DisplayTree() {
+        DisplayTree(_root, 0);
+    }
+    
+    private void DisplayTree(Node current, int level) {
+        for (int i = 0; i < level; i++) {
+            Console.Write("  ");
+        }
+        Console.WriteLine(current.Name);
+        foreach (Node child in current.Children) {
+            DisplayTree(child, level + 1);
+        }
+    }
+    
 }
