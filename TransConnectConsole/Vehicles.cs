@@ -1,11 +1,18 @@
 namespace TransConnectConsole;
 
-public abstract class Vehicle
+public enum VehicleType
 {
-    
+    Car,
+    Van,
+    Truck
 }
 
-public interface IContains
+public class Vehicle
 {
+    private Driver _driver;
     
+    protected Vehicle(Driver driver)
+    {
+        _driver = driver;
+    }
 }
