@@ -85,10 +85,10 @@ public class Employee : Person
 
 public class Client : Person
 {
-    private List<Order> _deliveries;
+    private List<Order> _orders;
 
-    public Client(string ssNum, string firstName, string lastName, DateTime birthDate, string phone, string address, string email, List<Order> deliveries) : base(ssNum, firstName, lastName, birthDate, phone, address, email)
+    public Client(string ssNum, string firstName, string lastName, DateTime birthDate, string phone, string address, string email, List<Order> orders) : base(ssNum, firstName, lastName, birthDate, phone, address, email)
     {
-        _deliveries = deliveries;
+        _orders = orders;
     }
 }
