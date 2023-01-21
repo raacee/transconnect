@@ -1,6 +1,6 @@
 ﻿namespace TreeLib;
 
-class Node {
+public class Node {
     private int _data;
     private string _name;
     private List<Node> _children;
