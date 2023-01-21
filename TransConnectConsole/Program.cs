@@ -1,9 +1,16 @@
-﻿namespace TransConnectConsole;
+﻿using Company;
+
+namespace TransConnectConsole;
 
 static class Program
 {
     static void Main()
     {
+        Company.Company transconnect = new Company.Company();
+
+        return;
+
+        /*
         string mainScreenStr = "Choisir une opération :\n" +
                                "1 - Afficher l'entreprise\n" +
                                "2 - Ajouter un employé\n" +
@@ -45,6 +52,6 @@ static class Program
             default:
                 goto mainScreenSelection;
         }
-        
+        */
     }
 }

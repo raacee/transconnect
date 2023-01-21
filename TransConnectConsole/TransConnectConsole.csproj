@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Cities\Cities.csproj" />
+      <ProjectReference Include="..\Company\Company.csproj" />
       <v Include="..\Company\Company.csproj" />
     </ItemGroup>
 
