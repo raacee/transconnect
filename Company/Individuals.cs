@@ -84,15 +84,25 @@ public class Employee : Person
     private DateTime _entryTime;
     private string _position;
     private int _salary;
+    private List<Employee> _subalternes;
+
+    public List<Employee> Subalternes => _subalternes;
 
     public Employee(string ssNum, string firstName, string lastName, DateTime birthDate, string phone, string address,
-        string email, DateTime entryTime, string position, int salary, Sex sex) : base(ssNum, firstName, lastName,
+        string email, DateTime entryTime, string position, int salary, Sex sex, List<Employee> subalternes) : base(ssNum, firstName, lastName,
         birthDate, phone, address, email, sex)
     {
         _entryTime = entryTime;
         _position = position;
         _salary = salary;
+        this._subalternes = subalternes;
     }
+
+    public int Salary => _salary;
+
+    public string Position => _position;
+
+    public DateTime EntryTime => _entryTime;
 }
 
 public class Client : Person
