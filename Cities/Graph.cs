@@ -1,4 +1,4 @@
-﻿namespace GraphLib;
+﻿namespace Cities;
 
 public abstract class Graph
 {

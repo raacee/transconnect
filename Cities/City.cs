@@ -1,4 +1,4 @@
-namespace GraphLib;
+namespace Cities;
 
 public class City : Node
 {
