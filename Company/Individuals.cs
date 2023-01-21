@@ -8,7 +8,7 @@ public enum Sex
     Female
 }
 
-public abstract class Person
+public abstract class Person : Node
 {
     private string _ssNum;
     private string _firstName;
@@ -20,7 +20,7 @@ public abstract class Person
     private Sex _sex;
 
     protected Person(string ssNum, string firstName, string lastName, DateTime birthDate, string phone, string address,
-        string email, Sex sex)
+        string email, Sex sex) : base()
     {
         _ssNum = ssNum;
         _firstName = firstName;
