@@ -18,13 +18,23 @@ public class Node {
     public int Data => _data;
 }
 
-class Tree {
+public abstract class Tree {
     private Node _root;
 
-    public Tree(int data, string name) {
+    protected Tree(int data, string name) {
         _root = new Node(data, name);
     }
 
+    protected Tree(Node root)
+    {
+        this._root = root;
+    }
+
+    protected Tree()
+    {
+        this._root = new Node();
+    }
+    
     public void AddChild(Node parent, int data, string name) {
         Node child = new Node(data, name);
         parent.Children.Add(child);
