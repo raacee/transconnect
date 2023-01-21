@@ -5,10 +5,10 @@ public class Node {
     private string _name;
     private List<Node> _children;
 
-    public Node(int data, string name) {
+    public Node(int data = 0, string name = "") {
         this._data = data;
         this._name = name;
-        this._children = new List<Node>();
+        this._children = new List<Node>(0);
     }
 
     public List<Node> Children => _children;
