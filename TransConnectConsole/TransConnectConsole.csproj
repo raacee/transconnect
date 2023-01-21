@@ -9,6 +9,15 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Cities\Cities.csproj" />
+      <v Include="..\Company\Company.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include=".\Company.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="bin\Debug\net6.0" />
     </ItemGroup>
 
 </Project>
