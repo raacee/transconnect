@@ -1,91 +1,234 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Employee>
+    <_firstName>Paul</_firstName>
     <_lastName>Dupond</_lastName>
-    <position>Directeur Général</position>
+    <_position>Directeur Général</_position>
+    <_sex>Male</_sex>
+    <_birthdate>01-01-1999</_birthdate>
+    <_phone>0612345678</_phone>
+    <_address>21 avenue Leonard de Vinci</_address>
+    <_mail>pauldupond@mail.fr</_mail>
     <_subalternes>
         <Employee>
+            <_firstName>Marine</_firstName>
             <_lastName>Fiesta</_lastName>
-            <position>Directrice Commerciale</position>        
+            <_position>Directrice Commerciale</_position>
+            <_sex>Female</_sex>
+            <_birthdate>01-01-1999</_birthdate>
+            <_phone>0612345678</_phone>
+            <_address>21 avenue Leonard de Vinci</_address>
+            <_mail>marinefiesta@mail.fr</_mail>
             <_subalternes>
                 <Employee>
+                    <_firstName>Romain</_firstName>
                     <_lastName>Forge</_lastName>
-                    <position>Commercial</position>
+                    <_position>Commercial</_position>
+                    <_sex>Male</_sex>
+                    <_birthdate>01-01-1999</_birthdate>
+                    <_phone>0612345678</_phone>
+                    <_address>21 avenue Leonard de Vinci</_address>
+                    <_mail>romainforge@mail.fr</_mail>
                     <_subalternes/>
                 </Employee>
                 <Employee>
+                    <_firstName>Lea</_firstName>
                     <_lastName>Fermi</_lastName>
-                    <position>Commercial</position>
+                    <_sex>Female</_sex>
+                    <_position>Commercial</_position>
+                    <_birthdate>01-01-1999</_birthdate>
+                    <_phone>0612345678</_phone>
+                    <_address>21 avenue Leonard de Vinci</_address>
+                    <_mail>romainforge@mail.fr</_mail>
                     <_subalternes/>
-                </Employee>                
+                </Employee>
             </_subalternes>
         </Employee>
         <Employee>
-        <_lastName>Fetard</_lastName>
-        <position>Directeur des operations</position>
+            <_firstName>Maurice</_firstName>
+            <_lastName>Fetard</_lastName>
+            <_position>Directeur des operations</_position>
+            <_sex>Male</_sex>
+            <_birthdate>01-01-1999</_birthdate>
+            <_phone>0612345678</_phone>
+            <_address>21 avenue Leonard de Vinci</_address>
+            <_mail>mauricefetard@mail.fr</_mail>
             <_subalternes>
                 <Employee>
-                <_lastName>Royal</_lastName>
-                <position>Chef Equipe</position>
+                    <_firstName>Franck</_firstName>
+                    <_lastName>Royal</_lastName>
+                    <_position>Chef Equipe</_position>
+                    <_sex>Male</_sex>
+                    <_birthdate>01-01-1999</_birthdate>
+                    <_phone>0612345678</_phone>
+                    <_address>21 avenue Leonard de Vinci</_address>
+                    <_mail>franckroyal@mail.fr</_mail>
+                    <_subalternes>
+                        <Employee>
+                            <_firstName>Patrick</_firstName>
+                            <_lastName>Romu</_lastName>
+                            <_position>Chauffeur</_position>
+                            <_sex>Male</_sex>
+                            <_birthdate>01-01-1999</_birthdate>
+                            <_phone>0612345678</_phone>
+                            <_address>21 avenue Leonard de Vinci</_address>
+                            <_mail>patrickromu@mail.fr</_mail>
+                            <_subalternes/>
+                        </Employee>
+                        <Employee>
+                            <_firstName>Tanguy</_firstName>
+                            <_lastName>Romi</_lastName>
+                            <_position>Chauffeur</_position>
+                            <_sex>Male</_sex>
+                            <_birthdate>01-01-1999</_birthdate>
+                            <_phone>0612345678</_phone>
+                            <_address>21 avenue Leonard de Vinci</_address>
+                            <_mail>tanguyromi@mail.fr</_mail>
+                            <_subalternes/>
+                        </Employee>
+                        <Employee>
+                            <_firstName>Tristan</_firstName>
+                            <_lastName>Roma</_lastName>
+                            <_position>Chauffeur</_position>
+                            <_sex>Male</_sex>
+                            <_birthdate>01-01-1999</_birthdate>
+                            <_phone>0612345678</_phone>
+                            <_address>21 avenue Leonard de Vinci</_address>
+                            <_mail>tristanroma@mail.fr</_mail>
+                            <_subalternes/>
+                        </Employee>
+                    </_subalternes>
+                </Employee>
+            </_subalternes>
+        </Employee>
+        <_subalternes>
+            <Employee>
+                <_firstName>Christelle</_firstName>
+                <_lastName>Prince</_lastName>
+                <_position>Chef Equipe</_position>
+                <_sex>Female</_sex>
+                <_birthdate>01-01-1999</_birthdate>
+                <_phone>0612345678</_phone>
+                <_address>21 avenue Leonard de Vinci</_address>
+                <_mail>christelleprince@mail.fr</_mail>
                 <_subalternes>
                     <Employee>
-                        <_lastName>Romu</_lastName>
-                        <position>Chauffeur</position>
+                        <_firstName>Arthur</_firstName>
+                        <_lastName>Rome</_lastName>
+                        <_position>Chauffeur</_position>
+                        <_sex>Male</_sex>
+                        <_birthdate>01-01-1999</_birthdate>
+                        <_phone>0612345678</_phone>
+                        <_address>21 avenue Leonard de Vinci</_address>
+                        <_mail>arthurrome@mail.fr</_mail>
+                        <_subalternes/>
                     </Employee>
                     <Employee>
-                        <_lastName>Romi</_lastName>
-                        <position>Chauffeur</position>
-                    </Employee>
-                    <Employee>
-                        <_lastName>Roma</_lastName>
-                        <position>Chauffeur</position>
+                        <_firstName>Theo</_firstName>
+                        <_lastName>Rimou</_lastName>
+                        <_position>Chauffeur</_position>
+                        <_sex>Male</_sex>
+                        <_birthdate>01-01-1999</_birthdate>
+                        <_phone>0612345678</_phone>
+                        <_address>21 avenue Leonard de Vinci</_address>
+                        <_mail>theorimou@mail.fr</_mail>
+                        <_subalternes/>
                     </Employee>
                 </_subalternes>
+            </Employee>
+        </_subalternes>
+    </_subalternes>
+    <_subalternes>
+        <Employee>
+            <_firstName>Alice</_firstName>
+            <_lastName>Joyeuse</_lastName>
+            <_position>Directrice des RH</_position>
+            <_sex>Female</_sex>
+            <_birthdate>01-01-1999</_birthdate>
+            <_phone>0612345678</_phone>
+            <_address>21 avenue Leonard de Vinci</_address>
+            <_mail>alicejoyeuse@mail.fr</_mail>
+            <_subalternes>
+                <Employee>
+                    <_firstName>Gertrude</_firstName>
+                    <_lastName>Couleur</_lastName>
+                    <_position>Formation</_position>
+                    <_sex>Female</_sex>
+                    <_birthdate>01-01-1999</_birthdate>
+                    <_phone>0612345678</_phone>
+                    <_address>21 avenue Leonard de Vinci</_address>
+                    <_mail>gertrudecouleur@mail.fr</_mail>
+                    <_subalternes/>
+                </Employee>
+                <Employee>
+                    <_firstName>Karine</_firstName>
+                    <_lastName>ToutleMonde</_lastName>
+                    <_position>Contrats</_position>
+                    <_sex>Female</_sex>
+                    <_birthdate>01-01-1999</_birthdate>
+                    <_phone>0612345678</_phone>
+                    <_address>21 avenue Leonard de Vinci</_address>
+                    <_mail>karinetoutlemonde@mail.fr</_mail>
                 </Employee>
             </_subalternes>
         </Employee>
-        <_subalternes>
-            <_lastName>Prince</_lastName>
-            <position>Chef Equipe</position>
-            <_subalternes>
-                <_lastName>Rome</_lastName>
-                <position>Chauffeur</position>
-            </_subalternes>
-            <_subalternes>
-                <_lastName>Rimou</_lastName>
-                <position>Chauffeur</position>
-            </_subalternes>
-        </_subalternes>
     </_subalternes>
     <_subalternes>
-        <_lastName>Joyeuse</_lastName>
-        <position>Directrice des RH</position>
-        <_subalternes>
-            <_lastName>Couleur</_lastName>
-            <position>Formation</position>
-        </_subalternes>
-        <_subalternes>
-            <_lastName>ToutleMonde</_lastName>
-            <position>Contrats</position>
-        </_subalternes>
-    </_subalternes>
-    <_subalternes>
-        <_lastName>GripSous</_lastName>
-        <positions>Directeur Financier</positions>
-        <_subalternes>
-            <_lastName>Picsou</_lastName>
-            <position>Direction comptable</position>
+        <Employee>
+            <_firstName>Jacob</_firstName>
+            <_lastName>GripSous</_lastName>
+            <positions>Directeur Financier</positions>
+            <_sex>Male</_sex>
+            <_birthdate>01-01-1999</_birthdate>
+            <_phone>0612345678</_phone>
+            <_address>21 avenue Leonard de Vinci</_address>
+            <_mail>jacobgripsous@mail.fr</_mail>
             <_subalternes>
-                <_lastName>Fournier</_lastName>
-                <position>Comptable</position>
+                <Employee>
+                    <_firstName>Leon</_firstName>
+                    <_lastName>Picsou</_lastName>
+                    <_position>Direction comptable</_position>
+                    <_sex>Male</_sex>
+                    <_birthdate>01-01-1999</_birthdate>
+                    <_phone>0612345678</_phone>
+                    <_address>21 avenue Leonard de Vinci</_address>
+                    <_mail>leonpicsou@mail.fr</_mail>
+                    <_subalternes>
+                        <Employee>
+                            <_firstName>Marie</_firstName>
+                            <_lastName>Fournier</_lastName>
+                            <_position>Comptable</_position>
+                            <_sex>Female</_sex>
+                            <_birthdate>01-01-1999</_birthdate>
+                            <_phone>0612345678</_phone>
+                            <_address>21 avenue Leonard de Vinci</_address>
+                            <_mail>mariefournier@mail.fr</_mail>
+                            <_subalternes />
+                        </Employee>
+                        <Employee>
+                            <_firstName>Louis</_firstName>
+                            <_lastName>Gauthier</_lastName>
+                            <_position>Comptable</_position>
+                            <_sex>Male</_sex>
+                            <_birthdate>01-01-1999</_birthdate>
+                            <_phone>0612345678</_phone>
+                            <_address>21 avenue Leonard de Vinci</_address>
+                            <_mail>louisgauthier@mail.fr</_mail>
+                            <_subalternes />
+                        </Employee>
+                    </_subalternes>
+                </Employee>
+                <Employee>
+                    <_firstName>Clement</_firstName>
+                    <_lastName>GrosSous</_lastName>
+                    <_position>Controleur de gestion</_position>
+                    <_sex>Male</_sex>
+                    <_birthdate>01-01-1999</_birthdate>
+                    <_phone>0612345678</_phone>
+                    <_address>21 avenue Leonard de Vinci</_address>
+                    <_mail>clementgrossous@mail.fr</_mail>
+                    <_subalternes />
+                </Employee>
             </_subalternes>
-            <_subalternes>
-                <_lastName>Gautier</_lastName>
-                <position>Comptable</position>
-            </_subalternes>
-        </_subalternes>
-        <_subalternes>
-            <_lastName>GrosSous</_lastName>
-            <position>Controleur de gestion</position>
-        </_subalternes>
+        </Employee>
     </_subalternes>
 </Employee>
