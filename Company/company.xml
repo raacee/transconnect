@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Employee>
+    <_lastName>Dupond</_lastName>
+    <position>Directeur Général</position>
+    <_subalternes>
+        <Employee>
+            <_lastName>Fiesta</_lastName>
+            <position>Directrice Commerciale</position>        
+            <_subalternes>
+                <Employee>
+                    <_lastName>Forge</_lastName>
+                    <position>Commercial</position>
+                    <_subalternes/>
+                </Employee>
+                <Employee>
+                    <_lastName>Fermi</_lastName>
+                    <position>Commercial</position>
+                    <_subalternes/>
+                </Employee>                
+            </_subalternes>
+        </Employee>
+        <Employee>
+        <_lastName>Fetard</_lastName>
+        <position>Directeur des operations</position>
+            <_subalternes>
+                <Employee>
+                <_lastName>Royal</_lastName>
+                <position>Chef Equipe</position>
+                <_subalternes>
+                    <Employee>
+                        <_lastName>Romu</_lastName>
+                        <position>Chauffeur</position>
+                    </Employee>
+                    <Employee>
+                        <_lastName>Romi</_lastName>
+                        <position>Chauffeur</position>
+                    </Employee>
+                    <Employee>
+                        <_lastName>Roma</_lastName>
+                        <position>Chauffeur</position>
+                    </Employee>
+                </_subalternes>
+                </Employee>
+            </_subalternes>
+        </Employee>
+        <_subalternes>
+            <_lastName>Prince</_lastName>
+            <position>Chef Equipe</position>
+            <_subalternes>
+                <_lastName>Rome</_lastName>
+                <position>Chauffeur</position>
+            </_subalternes>
+            <_subalternes>
+                <_lastName>Rimou</_lastName>
+                <position>Chauffeur</position>
+            </_subalternes>
+        </_subalternes>
+    </_subalternes>
+    <_subalternes>
+        <_lastName>Joyeuse</_lastName>
+        <position>Directrice des RH</position>
+        <_subalternes>
+            <_lastName>Couleur</_lastName>
+            <position>Formation</position>
+        </_subalternes>
+        <_subalternes>
+            <_lastName>ToutleMonde</_lastName>
+            <position>Contrats</position>
+        </_subalternes>
+    </_subalternes>
+    <_subalternes>
+        <_lastName>GripSous</_lastName>
+        <positions>Directeur Financier</positions>
+        <_subalternes>
+            <_lastName>Picsou</_lastName>
+            <position>Direction comptable</position>
+            <_subalternes>
+                <_lastName>Fournier</_lastName>
+                <position>Comptable</position>
+            </_subalternes>
+            <_subalternes>
+                <_lastName>Gautier</_lastName>
+                <position>Comptable</position>
+            </_subalternes>
+        </_subalternes>
+        <_subalternes>
+            <_lastName>GrosSous</_lastName>
+            <position>Controleur de gestion</position>
+        </_subalternes>
+    </_subalternes>
+</Employee>
