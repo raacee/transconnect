@@ -4,6 +4,12 @@ public class Node {
     private string _data;
     private List<Node> _children;
 
+    public Node(string data, List<Node> children)
+    {
+        _data = data;
+        _children = children;
+    }
+    
     public Node(string data)
     {
         this._data = data;
