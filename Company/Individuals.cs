@@ -20,7 +20,7 @@ public abstract class Person : Node
     private Sex _sex;
 
     protected Person(string ssNum, string firstName, string lastName, DateTime birthDate, string phone, string address,
-        string email, Sex sex) : base()
+        string email, Sex sex) : base(ssNum)
     {
         _ssNum = ssNum;
         _firstName = firstName;

@@ -1,21 +1,23 @@
 ﻿namespace TreeLib;
 
 public class Node {
-    private int _data;
-    private string _name;
+    private string _data;
     private List<Node> _children;
 
-    public Node(int data = 0, string name = "") {
+    public Node(string data)
+    {
         this._data = data;
-        this._name = name;
+        this._children = new List<Node>(0);
+    }
+
+    public Node(int data = 0, string name = "") {
+        this._data = data.ToString();
         this._children = new List<Node>(0);
     }
 
     public List<Node> Children => _children;
 
-    public string Name => _name;
-
-    public int Data => _data;
+    public string Data => _data;
 }
 
 public abstract class Tree {
@@ -45,7 +47,7 @@ public abstract class Tree {
     }
     
     private Node FindNodeByName(Node current, string name) {
-        if (current.Name == name) {
+        if (current.Data == name) {
             return current;
         }
         foreach (Node child in current.Children) {
