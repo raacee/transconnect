@@ -1,5 +1,7 @@
 ﻿using Company;
 using System.Text.Json;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace TransConnectConsole;
 
@@ -7,10 +9,11 @@ static class Program
 {
     static void Main()
     {
-        var json = File.ReadAllLines("/home/racel/RiderProjects/transconnect/Company/Company.json")[0];
-        var employee = JsonSerializer.Deserialize<Employee>(json);
-        Console.WriteLine(json);
+        var path = "/home/racel/RiderProjects/transconnect/Company/company.xml";
 
+        var xr = XmlReader.Create(path);
+        Console.WriteLine(xr.Depth);
+        
         return;
 
         /*
