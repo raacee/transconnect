@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Employee>
+    <_sSnum>55012</_sSnum>
     <_firstName>Paul</_firstName>
     <_lastName>Dupond</_lastName>
     <_position>Directeur Général</_position>
@@ -10,6 +11,7 @@
     <_mail>pauldupond@mail.fr</_mail>
     <_subalternes>
         <Employee>
+            <_sSnum>34724</_sSnum>
             <_firstName>Marine</_firstName>
             <_lastName>Fiesta</_lastName>
             <_position>Directrice Commerciale</_position>
@@ -20,6 +22,7 @@
             <_mail>marinefiesta@mail.fr</_mail>
             <_subalternes>
                 <Employee>
+                    <_sSnum>63763</_sSnum>
                     <_firstName>Romain</_firstName>
                     <_lastName>Forge</_lastName>
                     <_position>Commercial</_position>
@@ -31,6 +34,7 @@
                     <_subalternes/>
                 </Employee>
                 <Employee>
+                    <_sSnum>74527</_sSnum>
                     <_firstName>Lea</_firstName>
                     <_lastName>Fermi</_lastName>
                     <_sex>Female</_sex>
@@ -44,6 +48,7 @@
             </_subalternes>
         </Employee>
         <Employee>
+            <_sSnum>98323</_sSnum>
             <_firstName>Maurice</_firstName>
             <_lastName>Fetard</_lastName>
             <_position>Directeur des operations</_position>
@@ -54,6 +59,7 @@
             <_mail>mauricefetard@mail.fr</_mail>
             <_subalternes>
                 <Employee>
+                    <_sSnum>36572</_sSnum>
                     <_firstName>Franck</_firstName>
                     <_lastName>Royal</_lastName>
                     <_position>Chef Equipe</_position>
@@ -64,6 +70,7 @@
                     <_mail>franckroyal@mail.fr</_mail>
                     <_subalternes>
                         <Employee>
+                            <_sSnum>52196</_sSnum>
                             <_firstName>Patrick</_firstName>
                             <_lastName>Romu</_lastName>
                             <_position>Chauffeur</_position>
@@ -75,6 +82,7 @@
                             <_subalternes/>
                         </Employee>
                         <Employee>
+                            <_sSnum>13791</_sSnum>
                             <_firstName>Tanguy</_firstName>
                             <_lastName>Romi</_lastName>
                             <_position>Chauffeur</_position>
@@ -86,6 +94,7 @@
                             <_subalternes/>
                         </Employee>
                         <Employee>
+                            <_sSnum>13240</_sSnum>
                             <_firstName>Tristan</_firstName>
                             <_lastName>Roma</_lastName>
                             <_position>Chauffeur</_position>
@@ -102,6 +111,7 @@
         </Employee>
         <_subalternes>
             <Employee>
+                <_sSnum>32997</_sSnum>
                 <_firstName>Christelle</_firstName>
                 <_lastName>Prince</_lastName>
                 <_position>Chef Equipe</_position>
@@ -112,6 +122,7 @@
                 <_mail>christelleprince@mail.fr</_mail>
                 <_subalternes>
                     <Employee>
+                        <_sSnum>21554</_sSnum>
                         <_firstName>Arthur</_firstName>
                         <_lastName>Rome</_lastName>
                         <_position>Chauffeur</_position>
@@ -123,6 +134,7 @@
                         <_subalternes/>
                     </Employee>
                     <Employee>
+                        <_sSnum>35905</_sSnum>
                         <_firstName>Theo</_firstName>
                         <_lastName>Rimou</_lastName>
                         <_position>Chauffeur</_position>
@@ -139,6 +151,7 @@
     </_subalternes>
     <_subalternes>
         <Employee>
+            <_sSnum>39206</_sSnum>
             <_firstName>Alice</_firstName>
             <_lastName>Joyeuse</_lastName>
             <_position>Directrice des RH</_position>
@@ -149,6 +162,7 @@
             <_mail>alicejoyeuse@mail.fr</_mail>
             <_subalternes>
                 <Employee>
+                    <_sSnum>89135</_sSnum>
                     <_firstName>Gertrude</_firstName>
                     <_lastName>Couleur</_lastName>
                     <_position>Formation</_position>
@@ -160,6 +174,7 @@
                     <_subalternes/>
                 </Employee>
                 <Employee>
+                    <_sSnum>95090</_sSnum>
                     <_firstName>Karine</_firstName>
                     <_lastName>ToutleMonde</_lastName>
                     <_position>Contrats</_position>
@@ -174,6 +189,7 @@
     </_subalternes>
     <_subalternes>
         <Employee>
+            <_sSnum>84993</_sSnum>
             <_firstName>Jacob</_firstName>
             <_lastName>GripSous</_lastName>
             <positions>Directeur Financier</positions>
@@ -184,6 +200,7 @@
             <_mail>jacobgripsous@mail.fr</_mail>
             <_subalternes>
                 <Employee>
+                    <_sSnum>92267</_sSnum>
                     <_firstName>Leon</_firstName>
                     <_lastName>Picsou</_lastName>
                     <_position>Direction comptable</_position>
@@ -194,6 +211,7 @@
                     <_mail>leonpicsou@mail.fr</_mail>
                     <_subalternes>
                         <Employee>
+                            <_sSnum>99083</_sSnum>
                             <_firstName>Marie</_firstName>
                             <_lastName>Fournier</_lastName>
                             <_position>Comptable</_position>
@@ -205,6 +223,7 @@
                             <_subalternes />
                         </Employee>
                         <Employee>
+                            <_sSnum>23560</_sSnum>
                             <_firstName>Louis</_firstName>
                             <_lastName>Gauthier</_lastName>
                             <_position>Comptable</_position>
@@ -218,6 +237,7 @@
                     </_subalternes>
                 </Employee>
                 <Employee>
+                    <_sSnum>58261</_sSnum>
                     <_firstName>Clement</_firstName>
                     <_lastName>GrosSous</_lastName>
                     <_position>Controleur de gestion</_position>
