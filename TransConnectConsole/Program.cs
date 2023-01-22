@@ -1,4 +1,5 @@
 ﻿using Company;
+using System.Text.Json;
 
 namespace TransConnectConsole;
 
@@ -6,7 +7,9 @@ static class Program
 {
     static void Main()
     {
-        Company.Company transconnect = new Company.Company();
+        var json = File.ReadAllLines("/home/racel/RiderProjects/transconnect/Company/Company.json")[0];
+        var employee = JsonSerializer.Deserialize<Employee>(json);
+        Console.WriteLine(json);
 
         return;
 
