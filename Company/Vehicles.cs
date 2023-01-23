@@ -1,5 +1,3 @@
-using System.ComponentModel;
-
 namespace Company;
 
 public enum VehicleType
@@ -22,4 +20,9 @@ public class Vehicle
     {
         _driver = driver;
     }
+}
+
+internal class Cargo
+{
+    
 }
