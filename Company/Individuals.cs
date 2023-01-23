@@ -37,16 +37,16 @@ public class Employee : Person
     public string _position {get;set;}
     public int _salary {get;set;}
 
-    public List<Employee> _subalternes { get; set; }
+    public List<Employee> _subordinates { get; set; }
     
     public Employee(string ssNum, string firstName, string lastName, DateTime birthDate, string phone, string address,
-        string email, DateTime entryTime, string position, int salary, Sex sex, List<Employee> subalternes) : base(ssNum, firstName, lastName,
+        string email, DateTime entryTime, string position, int salary, Sex sex, List<Employee> subordinates) : base(ssNum, firstName, lastName,
         birthDate, phone, address, email, sex)
     {
         _entryTime = entryTime;
         _position = position;
         _salary = salary;
-        _subalternes = subalternes;
+        _subordinates = subordinates;
     }
 }
 
