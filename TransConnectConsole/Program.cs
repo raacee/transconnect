@@ -7,10 +7,8 @@ static class Program
     static void Main()
     {
         Company.Company transconnect = new Company.Company();
-        transconnect.SaveToJson();
-        //transconnect.SearchByName("Paul", "Dupond");
-        
-        
+        var employee = transconnect.SearchByName("Alice","Joyeuse");
+
         return;
 
         /*
