@@ -40,30 +40,51 @@ public class Company
         return SearchByName(_headOfCompany, firstname, lastname);
     }
 
-    private Employee? SearchByName(Employee currentEmployee, string firstname, string lastname)
+    private Employee? SearchByName(Employee employee, string firstname, string lastname)
     {
-        if (currentEmployee._subalternes.Count == 0) return null;
-        var employee = currentEmployee._subalternes.Find(
-            delegate(Employee employee)
-            {
-                return employee._firstName == firstname && employee._lastName == lastname;
-            });
-        if (employee != null)
+        if (employee._firstName == firstname && employee._lastName == lastname)
         {
             return employee;
         }
-        foreach (var subalterne in currentEmployee._subalternes)
+
+        foreach (var subordinate in employee._subordinates)
         {
-            var newEmp = SearchByName(subalterne, firstname, lastname);
-            if (newEmp != null) return newEmp;
+            var found = SearchByName(subordinate, firstname, lastname);
+            if (found != null) return found;
         }
+
         return null;
     }
 
+    public Employee? SearchBySSnum(string ssNum)
+    {
+        return SearchBySSnum(_headOfCompany, ssNum);
+    }
+    
+    private Employee? SearchBySSnum(Employee employee, string ssNum)
+    {
+        if (employee._ssNum == ssNum)
+        {
+            return employee;
+        }
+
+        foreach (var subordinate in employee._subordinates)
+        {
+            var found = SearchBySSnum(subordinate, ssNum);
+            if (found != null) return found;
+        }
+
+        return null;
+    }
+    
+    
+    
+    
+    
     public void SaveToJson()
     {
         var json = Newtonsoft.Json.JsonConvert.SerializeObject(_headOfCompany);
-        File.WriteAllText("/home/racel/RiderProjects/transconnect/Company/company-out.json",json);
+        File.WriteAllText("/home/racel/RiderProjects/transconnect/Company/company.json",json);
     }
 }
 
