@@ -5,6 +5,9 @@ namespace Company;
 public class Company
 {
     private Employee _headOfCompany;
+
+    public Employee HeadOfCompany => _headOfCompany;
+
     private List<Client> _clients;
 
     public Company()
