@@ -1,38 +1,51 @@
-using TreeLib;
 using Newtonsoft.Json;
+using TreeLib;
 
 namespace Company;
 
-public class Company : Tree
+public class Company : ITree
 {
     private Employee _headOfCompany;
-    public Company(Employee headOfCompany) : base(headOfCompany)
+    public Company() : base()
     {
-        _headOfCompany = headOfCompany;
-    }
-    
-    public Employee HeadOfCompany => _headOfCompany;
-
-    public string SerializeToJsonString(Employee currentEmployee)
-    {
-        var subalternes = currentEmployee._subalternes;
-        var subalternesString = "";
-
-        foreach (var subalterne in subalternes)
+        var json = File.ReadAllText("/home/racel/RiderProjects/transconnect/Company/company.json");
+        Employee? root = JsonConvert.DeserializeObject<Employee>(json);
+        if (root != null)
         {
-            subalternesString += SerializeToJsonString(subalterne);
+            _headOfCompany = root;
         }
-        var resStr = "{" +"\"name\":"+"\""+currentEmployee._firstName+" "+currentEmployee._lastName+"\""+","+"\"position\":"+"\""+currentEmployee._position+"\","+"\"subalternes\":["+subalternesString+"]"+"}";
-        
-        return resStr;
+        else throw new Exception("Root of company is null, check json");
     }
 
-    public object Deserialize(string path)
+    public Employee? SearchByName(string firstname, string lastname)
     {
-        var jsonString = File.ReadAllLines(path)[0];
-        Company root = JsonConvert.DeserializeObject<Company>(jsonString);
-        return root;
+        return SearchByName(_headOfCompany, firstname, lastname);
     }
-    
+
+    private Employee? SearchByName(Employee currentEmployee, string firstname, string lastname)
+    {
+        if (currentEmployee._subalternes.Count == 0) return null;
+        var employee = currentEmployee._subalternes.Find(
+            delegate(Employee employee)
+            {
+                return employee._firstName == firstname && employee._lastName == lastname;
+            });
+        if (employee != null)
+        {
+            return employee;
+        }
+        foreach (var subalterne in currentEmployee._subalternes)
+        {
+            var newEmp = SearchByName(subalterne, firstname, lastname);
+            if (newEmp != null) return newEmp;
+        }
+        return null;
+    }
+
+    public void SaveToJson()
+    {
+        var json = Newtonsoft.Json.JsonConvert.SerializeObject(_headOfCompany);
+        File.WriteAllText("/home/racel/RiderProjects/transconnect/Company/company-out.json",json);
+    }
 }
 
