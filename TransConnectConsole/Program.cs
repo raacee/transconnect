@@ -53,18 +53,6 @@ static class Program
             default:
                 goto mainScreenSelection;
         }
-        */
-    }
-
-    class Strings
-    {
-        private string name;
-
-        public string Name => name;
-
-        public Strings(string name)
-        {
-            this.name = name;
-        }
+        
     }
 }
