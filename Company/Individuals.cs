@@ -8,7 +8,7 @@ public enum Sex
     Female
 }
 
-public abstract class Person : Node
+public abstract class Person
 {
     public string _ssNum {get;set;}
     public string _firstName {get;set;}
@@ -20,7 +20,7 @@ public abstract class Person : Node
     public Sex _sex {get;set;}
 
     protected Person(string ssNum, string firstName, string lastName, DateTime birthDate, string phone, string address,
-        string email, Sex sex) : base ()
+        string email, Sex sex)
     {
         _ssNum = ssNum;
         _firstName = firstName;
@@ -38,18 +38,17 @@ public class Employee : Person
     public DateTime _entryTime {get;set;}
     public string _position {get;set;}
     public int _salary {get;set;}
-    public List<Employee> _subalternes {get;set;}
-    public string[] _subalternesPaths {get;set;}
 
+    public List<Employee> _subalternes { get; set; }
+    
     public Employee(string ssNum, string firstName, string lastName, DateTime birthDate, string phone, string address,
-        string email, DateTime entryTime, string position, int salary, Sex sex, List<Employee> subalternes, string[] subalternesPaths) : base(ssNum, firstName, lastName,
+        string email, DateTime entryTime, string position, int salary, Sex sex, List<Employee> subalternes) : base(ssNum, firstName, lastName,
         birthDate, phone, address, email, sex)
     {
         _entryTime = entryTime;
         _position = position;
         _salary = salary;
         _subalternes = subalternes;
-        _subalternesPaths = subalternesPaths;
     }
 }
 
