@@ -9,11 +9,14 @@ static class Program
 {
     static void Main()
     {
-        var path = "/home/racel/RiderProjects/transconnect/Company/company.xml";
+        var path = "/home/racel/RiderProjects/transconnect/Company/company.json";
 
-        var xr = XmlReader.Create(path);
-        Console.WriteLine(xr.Depth);
-        
+        var json = File.ReadAllText(path);
+
+        Employee? head = Newtonsoft.Json.JsonConvert.DeserializeObject<Employee>(json);
+
+        Console.WriteLine(head._subalternes);
+
         return;
 
         /*

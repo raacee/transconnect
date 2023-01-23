@@ -1,271 +1,270 @@
 {
-  "_headOfCompany": {
-    "_sSnum": "55012",
-    "_firstName": "Paul",
-    "_lastName": "Dupond",
-    "_position": "Directeur Général",
-    "_sex": "Male",
-    "_birthdate": "01-01-1999",
-    "_phone": "0612345678",
-    "_address": "21 avenue Leonard de Vinci",
-    "_mail": "pauldupond@mail.fr",
-    "_subalternes": [
-      {
-        "_sSnum": "34724",
-        "_firstName": "Marine",
-        "_lastName": "Fiesta",
-        "_position": "Directrice Commerciale",
-        "_sex": "Female",
-        "_birthdate": "01-01-1999",
-        "_phone": "0612345678",
-        "_address": "21 avenue Leonard de Vinci",
-        "_mail": "marinefiesta@mail.fr",
-        "_subalternes": [
-          {
-            "_sSnum": "63763",
-            "_firstName": "Romain",
-            "_lastName": "Forge",
-            "_position": "Commercial",
-            "_sex": "Male",
-            "_birthdate": "01-01-1999",
-            "_phone": "0612345678",
-            "_address": "21 avenue Leonard de Vinci",
-            "_mail": "romainforge@mail.fr",
-            "_subalternes": [
-              null
-            ]
-          },
-          {
-            "_sSnum": "74527",
-            "_firstName": "Lea",
-            "_lastName": "Fermi",
-            "_sex": "Female",
-            "_position": "Commercial",
-            "_birthdate": "01-01-1999",
-            "_phone": "0612345678",
-            "_address": "21 avenue Leonard de Vinci",
-            "_mail": "romainforge@mail.fr",
-            "_subalternes": [
-              null
-            ]
-          }
-        ]
-      },
-      {
-        "_sSnum": "98323",
-        "_firstName": "Maurice",
-        "_lastName": "Fetard",
-        "_position": "Directeur des operations",
-        "_sex": "Male",
-        "_birthdate": "01-01-1999",
-        "_phone": "0612345678",
-        "_address": "21 avenue Leonard de Vinci",
-        "_mail": "mauricefetard@mail.fr",
-        "_subalternes": [
-          {
-            "_sSnum": "36572",
-            "_firstName": "Franck",
-            "_lastName": "Royal",
-            "_position": "Chef Equipe",
-            "_sex": "Male",
-            "_birthdate": "01-01-1999",
-            "_phone": "0612345678",
-            "_address": "21 avenue Leonard de Vinci",
-            "_mail": "franckroyal@mail.fr",
-            "_subalternes": [
-              {
-                "_sSnum": "52196",
-                "_firstName": "Patrick",
-                "_lastName": "Romu",
-                "_position": "Chauffeur",
-                "_sex": "Male",
-                "_birthdate": "01-01-1999",
-                "_phone": "0612345678",
-                "_address": "21 avenue Leonard de Vinci",
-                "_mail": "patrickromu@mail.fr",
-                "_subalternes": [
-                  null
-                ]
-              },
-              {
-                "_sSnum": "13791",
-                "_firstName": "Tanguy",
-                "_lastName": "Romi",
-                "_position": "Chauffeur",
-                "_sex": "Male",
-                "_birthdate": "01-01-1999",
-                "_phone": "0612345678",
-                "_address": "21 avenue Leonard de Vinci",
-                "_mail": "tanguyromi@mail.fr",
-                "_subalternes": [
-                  null
-                ]
-              },
-              {
-                "_sSnum": "13240",
-                "_firstName": "Tristan",
-                "_lastName": "Roma",
-                "_position": "Chauffeur",
-                "_sex": "Male",
-                "_birthdate": "01-01-1999",
-                "_phone": "0612345678",
-                "_address": "21 avenue Leonard de Vinci",
-                "_mail": "tristanroma@mail.fr",
-                "_subalternes": [
-                  null
-                ]
-              }
-            ]
-          },
-          {
-            "_sSnum": "32997",
-            "_firstName": "Christelle",
-            "_lastName": "Prince",
-            "_position": "Chef Equipe",
-            "_sex": "Female",
-            "_birthdate": "01-01-1999",
-            "_phone": "0612345678",
-            "_address": "21 avenue Leonard de Vinci",
-            "_mail": "christelleprince@mail.fr",
-            "_subalternes": [
-              {
-                "_sSnum": "21554",
-                "_firstName": "Arthur",
-                "_lastName": "Rome",
-                "_position": "Chauffeur",
-                "_sex": "Male",
-                "_birthdate": "01-01-1999",
-                "_phone": "0612345678",
-                "_address": "21 avenue Leonard de Vinci",
-                "_mail": "arthurrome@mail.fr",
-                "_subalternes": [
-                  null
-                ]
-              },
-              {
-                "_sSnum": "35905",
-                "_firstName": "Theo",
-                "_lastName": "Rimou",
-                "_position": "Chauffeur",
-                "_sex": "Male",
-                "_birthdate": "01-01-1999",
-                "_phone": "0612345678",
-                "_address": "21 avenue Leonard de Vinci",
-                "_mail": "theorimou@mail.fr",
-                "_subalternes": [
-                  null
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "_sSnum": "39206",
-        "_firstName": "Alice",
-        "_lastName": "Joyeuse",
-        "_position": "Directrice des RH",
-        "_sex": "Female",
-        "_birthdate": "01-01-1999",
-        "_phone": "0612345678",
-        "_address": "21 avenue Leonard de Vinci",
-        "_mail": "alicejoyeuse@mail.fr",
-        "_subalternes": [
-          {
-            "_sSnum": "89135",
-            "_firstName": "Gertrude",
-            "_lastName": "Couleur",
-            "_position": "Formation",
-            "_sex": "Female",
-            "_birthdate": "01-01-1999",
-            "_phone": "0612345678",
-            "_address": "21 avenue Leonard de Vinci",
-            "_mail": "gertrudecouleur@mail.fr",
-            "_subalternes": [
-              null
-            ]
-          },
-          {
-            "_sSnum": "95090",
-            "_firstName": "Karine",
-            "_lastName": "ToutleMonde",
-            "_position": "Contrats",
-            "_sex": "Female",
-            "_birthdate": "01-01-1999",
-            "_phone": "0612345678",
-            "_address": "21 avenue Leonard de Vinci",
-            "_mail": "karinetoutlemonde@mail.fr"
-          }
-        ]
-      },
-      {
-        "_sSnum": "84993",
-        "_firstName": "Jacob",
-        "_lastName": "GripSous",
-        "positions": "Directeur Financier",
-        "_sex": "Male",
-        "_birthdate": "01-01-1999",
-        "_phone": "0612345678",
-        "_address": "21 avenue Leonard de Vinci",
-        "_mail": "jacobgripsous@mail.fr",
-        "_subalternes": [
-          {
-            "_sSnum": "92267",
-            "_firstName": "Leon",
-            "_lastName": "Picsou",
-            "_position": "Direction comptable",
-            "_sex": "Male",
-            "_birthdate": "01-01-1999",
-            "_phone": "0612345678",
-            "_address": "21 avenue Leonard de Vinci",
-            "_mail": "leonpicsou@mail.fr",
-            "_subalternes": [
-              {
-                "_sSnum": "99083",
-                "_firstName": "Marie",
-                "_lastName": "Fournier",
-                "_position": "Comptable",
-                "_sex": "Female",
-                "_birthdate": "01-01-1999",
-                "_phone": "0612345678",
-                "_address": "21 avenue Leonard de Vinci",
-                "_mail": "mariefournier@mail.fr",
-                "_subalternes": [
-                  null
-                ]
-              },
-              {
-                "_sSnum": "23560",
-                "_firstName": "Louis",
-                "_lastName": "Gauthier",
-                "_position": "Comptable",
-                "_sex": "Male",
-                "_birthdate": "01-01-1999",
-                "_phone": "0612345678",
-                "_address": "21 avenue Leonard de Vinci",
-                "_mail": "louisgauthier@mail.fr",
-                "_subalternes": [
-                  null
-                ]
-              }
-            ]
-          },
-          {
-            "_sSnum": "58261",
-            "_firstName": "Clement",
-            "_lastName": "GrosSous",
-            "_position": "Controleur de gestion",
-            "_sex": "Male",
-            "_birthdate": "01-01-1999",
-            "_phone": "0612345678",
-            "_address": "21 avenue Leonard de Vinci",
-            "_mail": "clementgrossous@mail.fr",
-            "_subalternes": [
-              null
-            ]
-          }
-        ]
-      }
-    ]
-  }
+  "_sSnum": "55012",
+  "_firstName": "Paul",
+  "_lastName": "Dupond",
+  "_position": "Directeur Général",
+  "_sex": "Male",
+  "_birthdate": "01-01-1999",
+  "_phone": "0612345678",
+  "_address": "21 avenue Leonard de Vinci",
+  "_mail": "pauldupond@mail.fr",
+  "_subalternes": [
+    {
+      "_sSnum": "34724",
+      "_firstName": "Marine",
+      "_lastName": "Fiesta",
+      "_position": "Directrice Commerciale",
+      "_sex": "Female",
+      "_birthdate": "01-01-1999",
+      "_phone": "0612345678",
+      "_address": "21 avenue Leonard de Vinci",
+      "_mail": "marinefiesta@mail.fr",
+      "_subalternes": [
+        {
+          "_sSnum": "63763",
+          "_firstName": "Romain",
+          "_lastName": "Forge",
+          "_position": "Commercial",
+          "_sex": "Male",
+          "_birthdate": "01-01-1999",
+          "_phone": "0612345678",
+          "_address": "21 avenue Leonard de Vinci",
+          "_mail": "romainforge@mail.fr",
+          "_subalternes": [
+            null
+          ]
+        },
+        {
+          "_sSnum": "74527",
+          "_firstName": "Lea",
+          "_lastName": "Fermi",
+          "_sex": "Female",
+          "_position": "Commercial",
+          "_birthdate": "01-01-1999",
+          "_phone": "0612345678",
+          "_address": "21 avenue Leonard de Vinci",
+          "_mail": "romainforge@mail.fr",
+          "_subalternes": [
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "_sSnum": "98323",
+      "_firstName": "Maurice",
+      "_lastName": "Fetard",
+      "_position": "Directeur des operations",
+      "_sex": "Male",
+      "_birthdate": "01-01-1999",
+      "_phone": "0612345678",
+      "_address": "21 avenue Leonard de Vinci",
+      "_mail": "mauricefetard@mail.fr",
+      "_subalternes": [
+        {
+          "_sSnum": "36572",
+          "_firstName": "Franck",
+          "_lastName": "Royal",
+          "_position": "Chef Equipe",
+          "_sex": "Male",
+          "_birthdate": "01-01-1999",
+          "_phone": "0612345678",
+          "_address": "21 avenue Leonard de Vinci",
+          "_mail": "franckroyal@mail.fr",
+          "_subalternes": [
+            {
+              "_sSnum": "52196",
+              "_firstName": "Patrick",
+              "_lastName": "Romu",
+              "_position": "Chauffeur",
+              "_sex": "Male",
+              "_birthdate": "01-01-1999",
+              "_phone": "0612345678",
+              "_address": "21 avenue Leonard de Vinci",
+              "_mail": "patrickromu@mail.fr",
+              "_subalternes": [
+                null
+              ]
+            },
+            {
+              "_sSnum": "13791",
+              "_firstName": "Tanguy",
+              "_lastName": "Romi",
+              "_position": "Chauffeur",
+              "_sex": "Male",
+              "_birthdate": "01-01-1999",
+              "_phone": "0612345678",
+              "_address": "21 avenue Leonard de Vinci",
+              "_mail": "tanguyromi@mail.fr",
+              "_subalternes": [
+                null
+              ]
+            },
+            {
+              "_sSnum": "13240",
+              "_firstName": "Tristan",
+              "_lastName": "Roma",
+              "_position": "Chauffeur",
+              "_sex": "Male",
+              "_birthdate": "01-01-1999",
+              "_phone": "0612345678",
+              "_address": "21 avenue Leonard de Vinci",
+              "_mail": "tristanroma@mail.fr",
+              "_subalternes": [
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "_sSnum": "32997",
+          "_firstName": "Christelle",
+          "_lastName": "Prince",
+          "_position": "Chef Equipe",
+          "_sex": "Female",
+          "_birthdate": "01-01-1999",
+          "_phone": "0612345678",
+          "_address": "21 avenue Leonard de Vinci",
+          "_mail": "christelleprince@mail.fr",
+          "_subalternes": [
+            {
+              "_sSnum": "21554",
+              "_firstName": "Arthur",
+              "_lastName": "Rome",
+              "_position": "Chauffeur",
+              "_sex": "Male",
+              "_birthdate": "01-01-1999",
+              "_phone": "0612345678",
+              "_address": "21 avenue Leonard de Vinci",
+              "_mail": "arthurrome@mail.fr",
+              "_subalternes": [
+                null
+              ]
+            },
+            {
+              "_sSnum": "35905",
+              "_firstName": "Theo",
+              "_lastName": "Rimou",
+              "_position": "Chauffeur",
+              "_sex": "Male",
+              "_birthdate": "01-01-1999",
+              "_phone": "0612345678",
+              "_address": "21 avenue Leonard de Vinci",
+              "_mail": "theorimou@mail.fr",
+              "_subalternes": [
+                null
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_sSnum": "39206",
+      "_firstName": "Alice",
+      "_lastName": "Joyeuse",
+      "_position": "Directrice des RH",
+      "_sex": "Female",
+      "_birthdate": "01-01-1999",
+      "_phone": "0612345678",
+      "_address": "21 avenue Leonard de Vinci",
+      "_mail": "alicejoyeuse@mail.fr",
+      "_subalternes": [
+        {
+          "_sSnum": "89135",
+          "_firstName": "Gertrude",
+          "_lastName": "Couleur",
+          "_position": "Formation",
+          "_sex": "Female",
+          "_birthdate": "01-01-1999",
+          "_phone": "0612345678",
+          "_address": "21 avenue Leonard de Vinci",
+          "_mail": "gertrudecouleur@mail.fr",
+          "_subalternes": [
+            null
+          ]
+        },
+        {
+          "_sSnum": "95090",
+          "_firstName": "Karine",
+          "_lastName": "ToutleMonde",
+          "_position": "Contrats",
+          "_sex": "Female",
+          "_birthdate": "01-01-1999",
+          "_phone": "0612345678",
+          "_address": "21 avenue Leonard de Vinci",
+          "_mail": "karinetoutlemonde@mail.fr"
+        }
+      ]
+    },
+    {
+      "_sSnum": "84993",
+      "_firstName": "Jacob",
+      "_lastName": "GripSous",
+      "positions": "Directeur Financier",
+      "_sex": "Male",
+      "_birthdate": "01-01-1999",
+      "_phone": "0612345678",
+      "_address": "21 avenue Leonard de Vinci",
+      "_mail": "jacobgripsous@mail.fr",
+      "_subalternes": [
+        {
+          "_sSnum": "92267",
+          "_firstName": "Leon",
+          "_lastName": "Picsou",
+          "_position": "Direction comptable",
+          "_sex": "Male",
+          "_birthdate": "01-01-1999",
+          "_phone": "0612345678",
+          "_address": "21 avenue Leonard de Vinci",
+          "_mail": "leonpicsou@mail.fr",
+          "_subalternes": [
+            {
+              "_sSnum": "99083",
+              "_firstName": "Marie",
+              "_lastName": "Fournier",
+              "_position": "Comptable",
+              "_sex": "Female",
+              "_birthdate": "01-01-1999",
+              "_phone": "0612345678",
+              "_address": "21 avenue Leonard de Vinci",
+              "_mail": "mariefournier@mail.fr",
+              "_subalternes": [
+                null
+              ]
+            },
+            {
+              "_sSnum": "23560",
+              "_firstName": "Louis",
+              "_lastName": "Gauthier",
+              "_position": "Comptable",
+              "_sex": "Male",
+              "_birthdate": "01-01-1999",
+              "_phone": "0612345678",
+              "_address": "21 avenue Leonard de Vinci",
+              "_mail": "louisgauthier@mail.fr",
+              "_subalternes": [
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "_sSnum": "58261",
+          "_firstName": "Clement",
+          "_lastName": "GrosSous",
+          "_position": "Controleur de gestion",
+          "_sex": "Male",
+          "_birthdate": "01-01-1999",
+          "_phone": "0612345678",
+          "_address": "21 avenue Leonard de Vinci",
+          "_mail": "clementgrossous@mail.fr",
+          "_subalternes": [
+            null
+          ]
+        }
+      ]
+    }
+  ]
+  
 }

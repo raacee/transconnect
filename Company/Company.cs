@@ -6,7 +6,6 @@ namespace Company;
 public class Company : Tree
 {
     private Employee _headOfCompany;
-
     public Company(Employee headOfCompany) : base(headOfCompany)
     {
         _headOfCompany = headOfCompany;
@@ -16,14 +15,14 @@ public class Company : Tree
 
     public string SerializeToJsonString(Employee currentEmployee)
     {
-        var subalternes = currentEmployee.Subalternes;
+        var subalternes = currentEmployee._subalternes;
         var subalternesString = "";
 
         foreach (var subalterne in subalternes)
         {
             subalternesString += SerializeToJsonString(subalterne);
         }
-        var resStr = "{" +"\"name\":"+"\""+currentEmployee.FirstName+" "+currentEmployee.LastName+"\""+","+"\"position\":"+"\""+currentEmployee.Position+"\","+"\"subalternes\":["+subalternesString+"]"+"}";
+        var resStr = "{" +"\"name\":"+"\""+currentEmployee._firstName+" "+currentEmployee._lastName+"\""+","+"\"position\":"+"\""+currentEmployee._position+"\","+"\"subalternes\":["+subalternesString+"]"+"}";
         
         return resStr;
     }
