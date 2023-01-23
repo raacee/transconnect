@@ -1,0 +1,17 @@
+{
+  "_sSnum": "55012",
+  "_firstName": "Paul",
+  "_lastName": "Dupond",
+  "_position": "Directeur Général",
+  "_sex": "Male",
+  "_birthdate": "01-01-1999",
+  "_phone": "0612345678",
+  "_address": "21 avenue Leonard de Vinci",
+  "_mail": "pauldupond@mail.fr",
+  "_subalternes": [
+    "34724.json",
+    "98323.json",
+    "39206.json",
+    "84993.json"
+  ]
+}

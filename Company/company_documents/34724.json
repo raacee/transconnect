@@ -1,0 +1,15 @@
+{
+  "_sSnum": "34724",
+  "_firstName": "Marine",
+  "_lastName": "Fiesta",
+  "_position": "Directrice Commerciale",
+  "_sex": "Female",
+  "_birthdate": "01-01-1999",
+  "_phone": "0612345678",
+  "_address": "21 avenue Leonard de Vinci",
+  "_mail": "marinefiesta@mail.fr",
+  "_subalternes": [
+    "63763.json",
+    "74527.json"        
+  ]
+}

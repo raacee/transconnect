@@ -1,0 +1,15 @@
+{
+  "_sSnum": "92267",
+  "_firstName": "Leon",
+  "_lastName": "Picsou",
+  "_position": "Direction comptable",
+  "_sex": "Male",
+  "_birthdate": "01-01-1999",
+  "_phone": "0612345678",
+  "_address": "21 avenue Leonard de Vinci",
+  "_mail": "leonpicsou@mail.fr",
+  "_subalternes": [
+    "99083.json",
+    "23560.json"
+  ]
+}
