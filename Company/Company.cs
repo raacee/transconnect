@@ -1,13 +1,27 @@
 using Newtonsoft.Json;
-using TreeLib;
 
 namespace Company;
 
-public class Company : ITree
+public class Company
 {
     private Employee _headOfCompany;
-    public Company() : base()
+    private List<Client> _clients;
+
+    public Company()
     {
+        _clients = new List<Client>(0);
+        var json = File.ReadAllText("/home/racel/RiderProjects/transconnect/Company/company.json");
+        Employee? root = JsonConvert.DeserializeObject<Employee>(json);
+        if (root != null)
+        {
+            _headOfCompany = root;
+        }
+        else throw new Exception("Root of company is null, check json");
+    }
+    
+    public Company(List<Client> clients)
+    {
+        _clients = clients;
         var json = File.ReadAllText("/home/racel/RiderProjects/transconnect/Company/company.json");
         Employee? root = JsonConvert.DeserializeObject<Employee>(json);
         if (root != null)
