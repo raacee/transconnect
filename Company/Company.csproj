@@ -8,7 +8,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Cities\Cities.csproj" />
-      <ProjectReference Include="..\TreeLib\TreeLib.csproj" />
     </ItemGroup>
 
     <ItemGroup>
