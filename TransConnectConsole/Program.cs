@@ -1,7 +1,4 @@
 ﻿using Company;
-using System.Text.Json;
-using System.Xml;
-using System.Xml.Serialization;
 
 namespace TransConnectConsole;
 
@@ -9,14 +6,11 @@ static class Program
 {
     static void Main()
     {
-        var path = "/home/racel/RiderProjects/transconnect/Company/company.json";
-
-        var json = File.ReadAllText(path);
-
-        Employee? head = Newtonsoft.Json.JsonConvert.DeserializeObject<Employee>(json);
-
-        Console.WriteLine(head._subalternes);
-
+        Company.Company transconnect = new Company.Company();
+        transconnect.SaveToJson();
+        //transconnect.SearchByName("Paul", "Dupond");
+        
+        
         return;
 
         /*
@@ -62,5 +56,17 @@ static class Program
                 goto mainScreenSelection;
         }
         */
+    }
+
+    class Strings
+    {
+        private string name;
+
+        public string Name => name;
+
+        public Strings(string name)
+        {
+            this.name = name;
+        }
     }
 }
