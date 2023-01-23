@@ -76,6 +76,11 @@ public class Company
 
         return null;
     }
+
+    public void AddEmployee(Employee newEmployee, Employee superior)
+    {
+        superior._subordinates.Add(newEmployee);
+    }
     
     
     
