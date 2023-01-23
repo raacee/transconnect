@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace Company;
 
 public enum VehicleType
@@ -5,6 +7,11 @@ public enum VehicleType
     Car,
     Van,
     Truck
+}
+
+interface ITruck<out T>
+{
+    T Contains();
 }
 
 public class Vehicle
