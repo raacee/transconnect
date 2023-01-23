@@ -56,6 +56,8 @@ public class Client : Person
 {
     private List<Order> _orders;
 
+    public List<Order> Orders => _orders;
+
     public Client(string ssNum, string firstName, string lastName, DateTime birthDate, string phone, string address,
         string email, List<Order> orders, Sex sex) : base(ssNum, firstName, lastName, birthDate, phone, address, email,
         sex)
