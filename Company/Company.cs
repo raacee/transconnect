@@ -82,7 +82,18 @@ public class Company
         superior._subordinates.Add(newEmployee);
     }
     
+    //TODO:implement these methods
+    //to implement
+    public void RemoveEmployee(Employee employee)
+    {
+        
+    }
     
+    //to implement
+    public Employee GetSuperior(Employee employee)
+    {
+        return null;
+    }
     
     
     
