@@ -84,14 +84,34 @@ public class Company
     
     //TODO:implement these methods
     //to implement
-    public void RemoveEmployee(Employee employee)
+    public void RemoveEmployee(Employee employeeToRemove)
     {
-        
+        var superior = GetSuperior(employeeToRemove);
+        if (superior != null && superior._subordinates.Remove(employeeToRemove))
+        {
+            return;
+        }
+        else
+        {
+            throw new Exception("Error in RemoveEmployee, employee to be removed is not in the tree");
+        }
+    }
+
+    public Employee? GetSuperior(Employee employee)
+    {
+        return GetSuperior(_headOfCompany, employee);
     }
     
     //to implement
-    public Employee GetSuperior(Employee employee)
+    private Employee? GetSuperior(Employee currentEmployee, Employee employee)
     {
+        if (currentEmployee._subordinates.Contains(employee)) return currentEmployee;
+        foreach (var subordinate in currentEmployee._subordinates)
+        {
+            var found = GetSuperior(subordinate,employee);
+            if (found != null) return found;
+        }
+
         return null;
     }
     
