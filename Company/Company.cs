@@ -5,21 +5,21 @@ namespace Company;
 public class Company
 {
     private Employee _headOfCompany;
-
-    public Employee HeadOfCompany => _headOfCompany;
-
+    private List<Order> _orders;
     private List<Client> _clients;
+    
+    public Employee HeadOfCompany => _headOfCompany;
 
     public Company()
     {
-        _clients = new List<Client>(0);
-        var json = File.ReadAllText("/home/racel/RiderProjects/transconnect/Company/company.json");
-        Employee? root = JsonConvert.DeserializeObject<Employee>(json);
-        if (root != null)
-        {
-            _headOfCompany = root;
-        }
-        else throw new Exception("Root of company is null, check json");
+        var employeesJson = File.ReadAllText("../../../../Company/company.json");
+        _headOfCompany = JsonConvert.DeserializeObject<Employee>(employeesJson) ?? throw new InvalidOperationException();
+        //read clients from json
+        var clientsJson = File.ReadAllText("../../../../Company/clients.json");
+        _clients = JsonConvert.DeserializeObject<List<Client>>(clientsJson) ?? throw new InvalidOperationException();
+        //read orders from json
+        var ordersJson = File.ReadAllText("../../../../Company/orders.json");
+        _orders = JsonConvert.DeserializeObject<List<Order>>(ordersJson) ?? throw new InvalidOperationException();
     }
     
     public Company(List<Client> clients)
@@ -39,7 +39,7 @@ public class Company
         return SearchByName(_headOfCompany, firstname, lastname);
     }
 
-    private Employee? SearchByName(Employee employee, string firstname, string lastname)
+    private Employee? SearchByName(Employee employee, string? firstname, string lastname)
     {
         if (employee._firstName == firstname && employee._lastName == lastname)
         {
@@ -113,8 +113,12 @@ public class Company
 
     public void SaveToJson()
     {
-        var json = JsonConvert.SerializeObject(_headOfCompany);
-        File.WriteAllText("/home/racel/RiderProjects/transconnect/Company/company.json",json);
+        var employeesJson = JsonConvert.SerializeObject(_headOfCompany);
+        File.WriteAllText("../../../../Company/company.json",employeesJson);
+        var ordersJson = JsonConvert.SerializeObject(_orders);
+        File.WriteAllText("../../../../Company/orders.json",ordersJson);
+        var clientsJson = JsonConvert.SerializeObject(_clients);
+        File.WriteAllText("../../../../Company/clients.json",clientsJson);
     }
 
     public string Treeify()

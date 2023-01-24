@@ -53,6 +53,22 @@ public class Employee : Person
     {
         return _firstName + " " + _lastName;
     }
+
+    public string AllFieldsString()
+    {
+        return "1 - Numéro de sécurité sociale :" + _ssNum + "\n"
+               + "2 - Prénom" + _firstName + "\n"
+               + "3 - Nom de famille :" + _lastName + "\n"
+               + "4 - Date de naissance :" + _birthDate + "\n"
+               + "5 - Téléphone : " + _phone + "\n"
+               + "6 - Addresse :" + _address + "\n"
+               + "7 - Adresse email :" + _email + "\n"
+               + "8 - Sexe :" + _sex + "\n"
+               + "9 - Date d'entrée dans l'entreprise : " + _entryTime + "\n"
+               + "10 - Poste :" + _position + "\n"
+               + "11 - Salaire :" + _salary;
+
+    }
 }
 
 public class Client : Person
