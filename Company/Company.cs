@@ -121,31 +121,7 @@ public class Company
         File.WriteAllText("../../../../Company/clients.json",clientsJson);
     }
 
-    public string Treeify()
-    {
-        return Treeify(_headOfCompany);
-    }
-
-    private string Treeify(Employee currentEmployee, int index = 0)
-    {
-        Console.WriteLine(currentEmployee);
-        var name = currentEmployee._firstName + " " + currentEmployee._lastName;
-        var branchChar = "├── ";
-        var res = "";
-        if (currentEmployee._subordinates.Count == 0 || currentEmployee._subordinates == null) return "";
-        foreach (var subordinate in currentEmployee._subordinates)
-        {
-            for (int i = 0; i < index; i++)
-            {
-                res += "\t";
-            }
-
-            res += branchChar + name;
-            res += Treeify(subordinate, index + 1);
-        }
-
-        return res;
-    }
+    
     
     public static void PrintEmployeeTree(List<Employee> employees, int level)
     {
