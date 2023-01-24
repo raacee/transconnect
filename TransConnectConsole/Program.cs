@@ -127,7 +127,6 @@ static class Program
 
             //Remove an employee
             case "3":
-                //remove an employee
                 Console.WriteLine("Ecrire le prénom de l'employé à retirer");
                 var firstnameToRemove = Console.ReadLine();
                 Console.WriteLine("Ecrire le nom de famille de l'employé à retirer");
@@ -296,6 +295,12 @@ static class Program
             default:
                 goto mainScreenSelection;
         }
-        
+    }
+
+    private static void PressToContinue()
+    {
+        Console.WriteLine("Appuyez sur une touche");
+        Console.ReadLine();
+        Console.Clear();
     }
 }
