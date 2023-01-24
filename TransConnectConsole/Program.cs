@@ -26,12 +26,17 @@ static class Program
 
         string? numStr = Console.ReadLine();
         Console.Clear();
-        
+        Console.WriteLine();
         switch (numStr)
         {
+            //Display the company tree
             case "1":
-                Console.WriteLine(transconnect.Treeify());
-                break;
+                Console.WriteLine(transconnect.HeadOfCompany);
+                Company.Company.PrintEmployeeTree(transconnect.HeadOfCompany._subordinates, 0);
+                PressToContinue();
+                goto mainScreenSelection;
+
+            //Add an employee
             case "2":
                 Console.WriteLine("Entrer son nom de famille");
                 var lastname = Console.ReadLine();
