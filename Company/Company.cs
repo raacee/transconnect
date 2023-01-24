@@ -1,4 +1,3 @@
-using System.Reflection.PortableExecutable;
 using Newtonsoft.Json;
 
 namespace Company;
@@ -82,8 +81,6 @@ public class Company
         superior._subordinates.Add(newEmployee);
     }
     
-    //TODO:implement these methods
-    //to implement
     public void RemoveEmployee(Employee employeeToRemove)
     {
         var superior = GetSuperior(employeeToRemove);
@@ -102,7 +99,6 @@ public class Company
         return GetSuperior(_headOfCompany, employee);
     }
     
-    //to implement
     private Employee? GetSuperior(Employee currentEmployee, Employee employee)
     {
         if (currentEmployee._subordinates.Contains(employee)) return currentEmployee;
@@ -114,13 +110,12 @@ public class Company
 
         return null;
     }
-    
-    
-    
+
     public void SaveToJson()
     {
-        var json = Newtonsoft.Json.JsonConvert.SerializeObject(_headOfCompany);
+        var json = JsonConvert.SerializeObject(_headOfCompany);
         File.WriteAllText("/home/racel/RiderProjects/transconnect/Company/company.json",json);
     }
+    
 }
 
