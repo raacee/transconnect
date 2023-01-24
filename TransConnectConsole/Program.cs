@@ -30,7 +30,7 @@ static class Program
         switch (numStr)
         {
             case "1":
-                Console.WriteLine(transconnect);
+                Console.WriteLine(transconnect.Treeify());
                 break;
             case "2":
                 Console.WriteLine("Entrer son nom de famille");

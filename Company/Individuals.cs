@@ -48,6 +48,11 @@ public class Employee : Person
         _salary = salary;
         _subordinates = subordinates;
     }
+    
+    public override string ToString()
+    {
+        return _firstName + " " + _lastName;
+    }
 }
 
 public class Client : Person
