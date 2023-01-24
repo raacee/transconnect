@@ -1,4 +1,5 @@
-﻿using Company;
+﻿using System.Threading.Channels;
+using Company;
 
 namespace TransConnectConsole;
 
@@ -12,11 +13,12 @@ static class Program
                                "1 - Afficher l'entreprise\n" +
                                "2 - Ajouter un employé\n" +
                                "3 - Retirer un employé\n" +
-                               "4 - Afficher les clients" +
-                               "5 - Ajouter un client\n" +
-                               "6 - Retirer un client\n" +
-                               "7 - Afficher les commandes\n" +
-                               "8 - Ajouter une commande\n" +
+                               "4 - Modifier un employé" +
+                               "5 - Afficher les clients" +
+                               "6 - Ajouter un client\n" +
+                               "7 - Retirer un client\n" +
+                               "8 - Afficher les commandes\n" +
+                               "9 - Ajouter une commande\n" +
                                "X ou CTRL + C - Quitter";
 
         mainScreenSelection:
@@ -71,7 +73,7 @@ static class Program
                     position == null ||
                     phone == null ||
                     email == null ||
-                    address == null) throw new Exception("One of the values entered is null");
+                    address == null) throw new Exception("Une des valeurs entrées est null");
                 var newEmployee = new Employee(ssnum, firstname, lastname, birthDate, phone, address, email, entryDate,
                     position, salary, sexStr, new List<Employee>(0));
                 Console.WriteLine("Qui est son supérieur ?");
@@ -109,23 +111,56 @@ static class Program
                         else throw new Exception("Employee not found");
                         break;
                 }
-                break;
+
+                Console.WriteLine("L'employé a été ajouté");
+                Console.WriteLine("Appuyez sur une touche");
+                Console.ReadLine();
+                Console.Clear();
+                goto mainScreenSelection; 
+                
             case "3":
                 //remove an employee
-                break;
+                Console.WriteLine("Ecrire le prénom de l'employé à retirer");
+                var firstnameToRemove = Console.ReadLine();
+                Console.WriteLine("Ecrire le nom de famille de l'employé à retirer");
+                var lastnameToRemove = Console.ReadLine();
+                if (lastnameToRemove == null || firstnameToRemove == null)
+                {
+                    Console.WriteLine("Veuillez entrer un nom valide");
+                    goto case "3";
+                }
+                var employeeToRemove = transconnect.SearchByName(firstnameToRemove, lastnameToRemove);
+                if (employeeToRemove == null)
+                {
+                    Console.WriteLine("Cet employé n'est pas dans l'entreprise");
+                    Console.WriteLine("Appuyer sur une touche");
+                    Console.ReadLine();
+                    Console.Clear();
+                    goto mainScreenSelection;
+                }
+                transconnect.RemoveEmployee(employeeToRemove);
+                Console.WriteLine("L'employé a été retiré");
+                Console.WriteLine("Appuyez sur une touche");
+                Console.ReadLine();
+                Console.Clear();
+                goto mainScreenSelection;
+                
             case "4":
-                //Display Clients
+                //Modify an employee
                 break;
             case "5":
-                //Add a client
+                //Display Clients
                 break;
             case "6":
-                //Remove a client
+                //Add a client
                 break;
             case "7":
-                //Display orders
+                //Remove a client
                 break;
             case "8":
+                //Display orders
+                break;
+            case "9":
                 //Add order
                 break;
             case "X":
