@@ -1,5 +1,4 @@
-﻿using System.Threading.Channels;
-using Company;
+﻿using Company;
 
 namespace TransConnectConsole;
 
@@ -31,7 +30,7 @@ static class Program
         switch (numStr)
         {
             case "1":
-                //Display Entreprise
+                Console.WriteLine(transconnect);
                 break;
             case "2":
                 Console.WriteLine("Entrer son nom de famille");
@@ -165,6 +164,7 @@ static class Program
                 break;
             case "X":
                 //Leave
+                transconnect.SaveToJson();
                 Console.WriteLine("Terminé");
                 return;
             default:
