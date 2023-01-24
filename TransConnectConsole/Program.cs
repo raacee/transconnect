@@ -130,6 +130,7 @@ static class Program
                 break;
             case "X":
                 //Leave
+                Console.WriteLine("Terminé");
                 return;
             default:
                 goto mainScreenSelection;
