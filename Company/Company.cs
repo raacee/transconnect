@@ -147,5 +147,19 @@ public class Company
         return res;
     }
     
+    public static void PrintEmployeeTree(List<Employee> employees, int level)
+    {
+        foreach (var employee in employees)
+        {
+            for (int i = 0; i < level; i++)
+            {
+                Console.Write("  ");
+            }
+            Console.WriteLine("- {0}", employee);
+            PrintEmployeeTree(employee._subordinates, level + 1);
+        }
+    }
 }
+    
+
 
