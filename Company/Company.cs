@@ -122,9 +122,13 @@ public class Company
         File.WriteAllText("../../../../Company/clients.json",clientsJson);
     }
 
-    
-    
-    public static void PrintEmployeeTree(List<Employee> employees, int level)
+    public void PrintEmployeeTree()
+    {
+        Console.WriteLine(_headOfCompany);
+        PrintEmployeeTree(_headOfCompany._subordinates,0);
+    }
+
+    private static void PrintEmployeeTree(List<Employee> employees, int level)
     {
         foreach (var employee in employees)
         {
