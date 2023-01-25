@@ -1,3 +1,4 @@
+using Cities;
 using Newtonsoft.Json;
 
 namespace Company;
@@ -7,6 +8,9 @@ public class Company
     private Employee _headOfCompany;
     private List<Order> _orders;
     private List<Client> _clients;
+    private Map _map;
+
+    public Map Map => _map;
     public List<Order> Orders => _orders;
     public List<Client> Clients => _clients;
     public Employee HeadOfCompany => _headOfCompany;
@@ -21,6 +25,7 @@ public class Company
         //read orders from json
         var ordersJson = File.ReadAllText("../../../../Company/orders.json");
         _orders = JsonConvert.DeserializeObject<List<Order>>(ordersJson) ?? throw new InvalidOperationException();
+        _map = new Map();
     }
     
     public Company(List<Client> clients)
