@@ -7,13 +7,13 @@ public class Order
     private Client _client;
     private City _cityOfOrigin;
     private City _cityOfArrival;
-    private DateTime _deliveryDate;
+    private DateTime _orderDate;
     private string _id;
     private Driver _driver;
 
-    public Order(DateTime deliveryDate, string id, Client client, City cityOfOrigin, City cityOfArrival, Driver driver)
+    public Order(DateTime orderDate, string id, Client client, City cityOfOrigin, City cityOfArrival, Driver driver)
     {
-        _deliveryDate = deliveryDate;
+        _orderDate = orderDate;
         _id = id;
         _client = client;
         _cityOfOrigin = cityOfOrigin;
@@ -27,7 +27,7 @@ public class Order
 
     public City CityOfOrigin => _cityOfOrigin;
     
-    public DateTime DeliveryDate => _deliveryDate;
+    public DateTime OrderDate => _orderDate;
 
     public override string ToString()
     {
