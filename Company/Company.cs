@@ -7,7 +7,8 @@ public class Company
     private Employee _headOfCompany;
     private List<Order> _orders;
     private List<Client> _clients;
-    
+    public List<Order> Orders => _orders;
+    public List<Client> Clients => _clients;
     public Employee HeadOfCompany => _headOfCompany;
 
     public Company()
