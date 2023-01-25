@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using Cities;
 using Company;
 
 namespace TransConnectConsole;
@@ -381,6 +382,32 @@ static class Program
                 }
                 
                 //creating the order
+                Console.WriteLine("Depuis quelle ville ?");
+                var cityDepartureStr = Console.ReadLine();
+                City? cityDeparture = transconnect.Map._cities.Find(
+                    delegate(City city) { return city._name == cityDepartureStr; });
+                if(cityDeparture == null)
+                {
+                    Console.WriteLine("Cette ville n'est pas dans la base de données");
+                    PressToContinue();
+                    goto mainScreenSelection;
+                }
+
+                Console.WriteLine("Vers quelle ville ?");
+                var cityArrivalStr = Console.ReadLine();
+                City? cityArrival = transconnect.Map._cities.Find(
+                    delegate(City city) { return city._name == cityArrivalStr; });
+                if(cityArrival == null)
+                {
+                    Console.WriteLine("Cette ville n'est pas dans la base de données");
+                    PressToContinue();
+                    goto mainScreenSelection;
+                }
+                
+                var newOrder = new Order(DateTime.Now, DateTime.Now.Ticks.ToString(), clientWhoIsOrdering,
+                    cityDeparture, cityArrival);
+                
+                
                 
                 break;
             
