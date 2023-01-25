@@ -9,10 +9,15 @@ public class Order
     private City _cityOfArrival;
     private DateTime _orderDate;
     private string _id;
-    private Driver _driver;
+    private Driver? _driver;
+    
+    public string Id => _id;
+    public Client Client => _client;
+    public City CityOfOrigin => _cityOfOrigin;    
+    public DateTime OrderDate => _orderDate;
 
-    public Order(DateTime orderDate, string id, Client client, City cityOfOrigin, City cityOfArrival, Driver driver)
-    {
+    public Order(DateTime orderDate, string id, Client client, City cityOfOrigin, City cityOfArrival, Driver? driver = null)
+    { 
         _orderDate = orderDate;
         _id = id;
         _client = client;
