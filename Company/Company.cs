@@ -140,6 +140,29 @@ public class Company
             PrintEmployeeTree(employee._subordinates, level + 1);
         }
     }
+
+    public void AddClient(Client newClient)
+    {
+        _clients.Add(newClient);
+    }
+
+    public Client? SearchClient(string firstname, string lastname)
+    {
+        return _clients.Find(delegate(Client client)
+        {
+            return client._firstName == firstname && client._lastName == lastname;
+        });
+    }
+    public void RemoveClient(string firstname, string lastname)
+    {
+        var clientToRemove = SearchClient(firstname, lastname);
+        if (clientToRemove == null)
+        {
+            Console.WriteLine("Ce client n'est pas inscrit");
+            return;
+        }
+        _clients.Remove(clientToRemove);
+    }
 }
     
 
