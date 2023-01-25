@@ -2,140 +2,127 @@ namespace Cities;
 
 public class City
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public List<City> Destinations { get; set; }
-
-    public City()
+    public string _name;
+    public Dictionary<City, int> _distances;
+    
+    public City(string name)
     {
-        var citiesArr = File.ReadAllLines("../../../../Cities/distances.csv");
-        foreach (var line in citiesArr)
+        _name = name.ToLower();
+        _distances = new Dictionary<City, int>();
+        string[] csv = File.ReadAllLines("../../../../Cities/distances.csv");
+        foreach (var cityInfo in csv)
         {
-            string[] values = line.Split(';');
-            City city1 = new City(values[0], values[1]);
-            City city2 = new City(values[2], values[3]);
-            int distance = int.Parse(values[4]);
-            TimeSpan time = TimeSpan.Parse(values[5]);
-            city1.AddDestination(city2, distance, time);
-            city2.AddDestination(city1, distance, time);
+            var cityArray = cityInfo.Split(";");
+            if (cityArray[0].ToLower() == _name)
+            {
+                _distances.Add(new City(cityArray[1]),Convert.ToInt32(cityArray[2]));
+            }
+            if (cityArray[1].ToLower() == _name)
+            {
+                _distances.Add(new City(cityArray[0]),Convert.ToInt32(cityArray[2]));
+            }
         }
     }
 
-    public City(int id, string name)
+    public City(Dictionary<City, int> distances, string name)
     {
-        this.Id = id;
-        this.Name = name;
-        this.Destinations = new List<City>();
-    }
-
-    public void AddDestination(City destination)
-    {
-        Destinations.Add(destination);
+        this._distances = distances;
+        this._name = name;
     }
 }
 
-public abstract class Map
+public class Map
 {
-    public List<City> Cities { get; set; }
-    public Dictionary<City, Dictionary<City, int>> Distances { get; set; }
+    public List<City> _cities { get; set; }
 
-    protected Map(List<City> cities)
+    public Map()
     {
-        this.Cities = cities;
-        this.Distances = new Dictionary<City, Dictionary<City, int>>();
-
-        // Create dictionaries of distances to each other city in the graph
-        foreach (City city in cities)
+        var csv = File.ReadAllLines("../../../../Cities/distances.csv");
+        _cities = new List<City>(0);
+        foreach (var line in csv)
         {
-            Distances.Add(city, new Dictionary<City, int>());
-            foreach (City otherCity in cities)
+            var cityName = line.Split(';')[0];
+            if (_cities.FindIndex(delegate(City city) { return city._name == cityName; }) == -1)
             {
-                if (city != otherCity)
-                {
-                    Distances[city].Add(otherCity, 0);
-                }
+                _cities.Add(new City(cityName));
             }
         }
     }
 
-    public void AddDistance(City fromCity, City toCity, int distance)
+    public List<City> FindShortestPath(City start, City end)
     {
-        Distances[fromCity][toCity] = distance;
-    }
-}
-
-public static class Graph
-{
-    public static List<City> ShortestPath(Map map, City fromCity, City toCity)
-    {
-        // Create a dictionary to store visited cities and the distances from the start city
-        Dictionary<City, int> visited = new Dictionary<City, int>();
-        foreach (City city in map.Cities)
+        // Initialize the data structures to hold the distances from the start city
+        // to each other city in the map.
+        Dictionary<City, int> distances = new Dictionary<City, int>();
+        foreach (City city in _cities)
         {
-            visited.Add(city, int.MaxValue);
+            // Initialize the distances to start as infinity
+            distances[city] = int.MaxValue;
         }
-        visited[fromCity] = 0;
 
-        // Create a priority queue to store the cities to visit
-        PriorityQueue<City, int> queue = new PriorityQueue<City, int>();
-        queue.Enqueue(fromCity, 0);
+        // Start with the start city at 0 distance
+        distances[start] = 0;
 
-        while (queue.Count > 0)
+        // Initialize the data structure to hold the previous city in the path
+        // from the start to each other city in the map.
+        Dictionary<City, City> previous = new Dictionary<City, City>();
+        foreach (City city in _cities)
         {
-            // Dequeue the city with the lowest distance from the start city
-            City currentCity = queue.Dequeue();
+            previous[city] = null;
+        }
 
-            if (currentCity == toCity)
+        // Initialize the data structure to hold the cities that have been
+        // visited and the ones that are still unvisited.
+        List<City> unvisited = new List<City>(_cities);
+
+        // Until all cities have been visited
+        while (unvisited.Count > 0)
+        {
+            // Select the city with the smallest distance as the current city.
+            City current = null;
+            int minDistance = int.MaxValue;
+            foreach (City city in unvisited)
             {
-                // If the current city is the destination city, return the shortest path
-                return GetShortestPath(visited, toCity, map);
+                if (distances[city] < minDistance)
+                {
+                    current = city;
+                    minDistance = distances[city];
+                }
             }
 
-            // Iterate through each of the destinations of the current city
-            foreach (City destination in currentCity.Destinations)
+            // If the current city is the end city, then we have finished
+            // the search and can build the shortest path.
+            if (current == end)
             {
-                // Calculate the total distance of the path from the start city to the destination
-                int totalDistance = visited[currentCity] + map.Distances[currentCity][destination];
-
-                // If the total distance is less than the current distance stored, update the distance
-                if (totalDistance < visited[destination])
+                List<City> path = new List<City>();
+                while (previous[current] != null)
                 {
-                    visited[destination] = totalDistance;
-                    queue.Enqueue(destination, totalDistance);
+                    path.Add(current);
+                    current = previous[current];
+                }
+
+                path.Reverse();
+                return path;
+            }
+
+            // Mark the current city as visited and remove it from the
+            // unvisited list.
+            unvisited.Remove(current);
+
+            // Update the distances of the adjacent cities.
+            foreach (City city in current._distances.Keys)
+            {
+                if (unvisited.Contains(city))
+                {
+                    int distance = distances[current] + current._distances[city];
+                    if (distance < distances[city])
+                    {
+                        distances[city] = distance;
+                        previous[city] = current;
+                    }
                 }
             }
         }
-
-        // If the destination city was not reached, return an empty list
-        return new List<City>();
-    }
-
-    // Recursive function to get the shortest path from the start city to the destination city
-    private static List<City> GetShortestPath(Dictionary<City, int> visited, City toCity, Map map)
-    {
-        List<City> path = new List<City>();
-
-        path.Add(toCity);
-
-        City currentCity = toCity;
-        int currentDistance = visited[toCity];
-
-        while (currentDistance > 0)
-        {
-            foreach (City city in currentCity.Destinations)
-            {
-                int totalDistance = visited[city] + map.Distances[city][currentCity];
-                if (totalDistance == currentDistance)
-                {
-                    path.Add(city);
-                    currentCity = city;
-                    currentDistance = visited[city];
-                    break;
-                }
-            }
-        }
-
-        path.Reverse();
-        return path;
+        return null;
     }
 }
