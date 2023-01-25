@@ -26,13 +26,7 @@ public class Order
         _driver = driver;
     }
 
-    public string Id => _id;
 
-    public Client Client => _client;
-
-    public City CityOfOrigin => _cityOfOrigin;
-    
-    public DateTime OrderDate => _orderDate;
 
     public override string ToString()
     {
