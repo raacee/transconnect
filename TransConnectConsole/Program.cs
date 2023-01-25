@@ -1,4 +1,5 @@
-﻿using Company;
+﻿using System.Runtime.CompilerServices;
+using Company;
 
 namespace TransConnectConsole;
 
@@ -10,14 +11,15 @@ static class Program
 
         string mainScreenStr = "Choisir une opération :\n" +
                                "1 - Afficher l'entreprise\n" +
-                               "2 - Ajouter un employé\n" +
-                               "3 - Retirer un employé\n" +
-                               "4 - Modifier un employé" +
-                               "5 - Afficher les clients" +
-                               "6 - Ajouter un client\n" +
-                               "7 - Retirer un client\n" +
-                               "8 - Afficher les commandes\n" +
-                               "9 - Ajouter une commande\n" +
+                               "2 - Afficher un employé\n"+
+                               "3 - Ajouter un employé\n" +
+                               "4 - Retirer un employé\n" +
+                               "5 - Modifier un employé" +
+                               "6 - Afficher les clients" +
+                               "7 - Ajouter un client\n" +
+                               "8 - Retirer un client\n" +
+                               "9 - Afficher les commandes\n" +
+                               "10 - Ajouter une commande\n" +
                                "X ou CTRL + C - Quitter";
 
         mainScreenSelection:
@@ -30,14 +32,36 @@ static class Program
         switch (numStr)
         {
             //Display the company tree
-            case "1":
-                Console.WriteLine(transconnect.HeadOfCompany);
-                Company.Company.PrintEmployeeTree(transconnect.HeadOfCompany._subordinates, 0);
+            case "1":Console.WriteLine(transconnect.HeadOfCompany);
+                transconnect.PrintEmployeeTree();
+                PressToContinue();
+                goto mainScreenSelection;
+
+            //Display an employee
+            case "2":
+                Console.WriteLine("Entrer le nom de l'employé à afficher");
+                var lastNameToDisplay = Console.ReadLine();
+                Console.WriteLine("Entrer le prénom de l'employé à afficher");
+                var firstNameToDisplay = Console.ReadLine();
+                if (lastNameToDisplay == null || firstNameToDisplay == null)
+                {
+                    Console.WriteLine("Un des noms est null");
+                    PressToContinue();
+                    goto mainScreenSelection;
+                }
+                var employeeToDisplay = transconnect.SearchByName(firstNameToDisplay, lastNameToDisplay);
+                if (employeeToDisplay == null)
+                {
+                    Console.WriteLine("Cet employé n'est pas dans l'entreprise");
+                    PressToContinue();
+                    goto mainScreenSelection;
+                }
+                Console.WriteLine(employeeToDisplay.AllFieldsString());
                 PressToContinue();
                 goto mainScreenSelection;
 
             //Add an employee
-            case "2":
+            case "3":
                 Console.WriteLine("Entrer son nom de famille");
                 var lastname = Console.ReadLine();
                 Console.Clear();
@@ -53,7 +77,7 @@ static class Program
                 Console.WriteLine("Entrer son sexe");
                 Console.WriteLine("0 - Homme");
                 Console.WriteLine("1 - Femme");
-                var sexStr = (Sex) Convert.ToInt32(Console.ReadLine());
+                var sex = (Sex) Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
                 Console.WriteLine("Entrer son nom de salaire");
                 var salary = Convert.ToInt32(Console.ReadLine());
@@ -80,7 +104,7 @@ static class Program
                     address == null) throw new Exception("Une des valeurs entrées est null");
                 var newEmployee = new Employee(ssnum, firstname, lastname, birthDate, phone, address, email,
                     entryDate,
-                    position, salary, sexStr, new List<Employee>(0));
+                    position, salary, sex, new List<Employee>(0));
                 Console.WriteLine("Qui est son supérieur ?");
                 Console.WriteLine("1 - Chercher par numéro de sécurité sociale");
                 Console.WriteLine("2 - Chercher par nom");
@@ -126,7 +150,7 @@ static class Program
                 goto mainScreenSelection;
 
             //Remove an employee
-            case "3":
+            case "4":
                 Console.WriteLine("Ecrire le prénom de l'employé à retirer");
                 var firstnameToRemove = Console.ReadLine();
                 Console.WriteLine("Ecrire le nom de famille de l'employé à retirer");
@@ -156,7 +180,7 @@ static class Program
                 goto mainScreenSelection;
 
             //Modify an employee
-            case "4":
+            case "5":
                 Console.WriteLine("Ecrivez le nom de famille de l'employé");
                 var lastNameToModify = Console.ReadLine();
                 Console.WriteLine("Ecrivez le prénom de l'employé");
@@ -167,14 +191,7 @@ static class Program
                     Console.WriteLine("Entrez le champ que vous voulez modifier");
                     if (employeeToModify != null)
                     {
-                        Console.WriteLine(
-                            "1 - Prénom" + employeeToModify._firstName + "\n"
-                            + "2 - Nom de famille :" + employeeToModify._lastName + "\n"
-                            + "3 - Téléphone : " + employeeToModify._phone + "\n"
-                            + "4 - Addresse :" + employeeToModify._address + "\n"
-                            + "5 - Adresse email :" + employeeToModify._email + "\n"
-                            + "6 - Poste :" + employeeToModify._position + "\n"
-                            + "7 - Salaire :" + employeeToModify._salary);
+                        employeeToModify.DisplayModifiables();
                         var fieldToChange = Console.ReadLine();
                         switch (fieldToChange)
                         {
@@ -266,24 +283,107 @@ static class Program
                 break;
 
             //Display Clients
-            case "5":
+            case "6":
+                foreach (var client in transconnect.Clients)
+                {
+                    Console.WriteLine(client);
+                }
                 break;
 
             //Add a client
-            case "6":
-                break;
+            case "7":
+                Console.WriteLine("Entrer son nom de famille");
+                var clientLastname = Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("Entrer son prénom");
+                var clientFirstname = Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("Entrer son numéro de sécurité sociale");
+                var clientSsnum = Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("Entrer son sexe");
+                Console.WriteLine("0 - Homme");
+                Console.WriteLine("1 - Femme");
+                var clientSex = (Sex) Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+                Console.WriteLine("Entrer sa date de naissance");
+                var clientBirthDate = DateTime.Parse(Console.ReadLine() ?? string.Empty);
+                Console.Clear();
+                Console.WriteLine("Entrer son numéro de téléphone");
+                var clientPhone = Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("Entrer son addresse email");
+                var clientEmail = Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("Entrer son addresse");
+                var clientAddress = Console.ReadLine();
+                Console.Clear();
+                if (clientLastname == null ||
+                    clientFirstname == null ||
+                    clientSsnum == null ||
+                    clientPhone == null ||
+                    clientEmail == null ||
+                    clientAddress == null) throw new Exception("Une des valeurs entrées est null");
+                var newClient = new Client(clientSsnum, clientFirstname, clientLastname, clientBirthDate, clientPhone,
+                    clientAddress, clientEmail, clientSex, new List<Order>(0));
+                transconnect.AddClient(newClient);
+                transconnect.SaveToJson();
+                Console.WriteLine("Client ajouté");
+                PressToContinue();
+                goto mainScreenSelection;
 
             //Remove a client
-            case "7":
-                break;
+            case "8":
+                Console.WriteLine("Entrer le nom du client à retirer");
+                var clientToRemoveLastName = Console.ReadLine();
+                Console.WriteLine("Entrer le prénom du client à retirer");
+                var clientToRemoveFirstName = Console.ReadLine();
+                if (clientToRemoveLastName == null || clientToRemoveFirstName == null)
+                {
+                    Console.WriteLine("Un des noms est null");
+                    PressToContinue();
+                    goto mainScreenSelection;
+                }
+
+                transconnect.RemoveClient(clientToRemoveFirstName, clientToRemoveLastName);
+                Console.WriteLine("Client retiré");
+                PressToContinue();
+                goto mainScreenSelection;
 
             //Display orders
-            case "8":
+            case "9":
+                foreach (var order in transconnect.Orders)
+                {
+                    Console.WriteLine(order+"\n");
+                }
                 break;
 
             //Add order
-            case "9":
+            case "10":
+                //getting the client who's ordering a delivery
+                Console.WriteLine("Entrer le nom de famille du client qui commande");
+                var clientOrderLastName = Console.ReadLine();
+                Console.WriteLine("Entrer le prénom de famille du client qui commande");
+                var clientOrderFirstName = Console.ReadLine();
+
+                if (clientOrderLastName == null || clientOrderFirstName == null)
+                {
+                    Console.WriteLine("Un des noms entrés est null");
+                    PressToContinue();
+                    goto mainScreenSelection;
+                }
+                var clientWhoIsOrdering = transconnect.SearchClient(clientOrderFirstName, clientOrderLastName);
+                if(clientWhoIsOrdering == null)
+                {
+                    Console.WriteLine("Ce client n'est pas inscrit dans l'entreprise");
+                    PressToContinue();
+                    goto mainScreenSelection;
+                }
+                
+                //creating the order
+                
                 break;
+            
 
             //Leave
             case "X":
