@@ -403,15 +403,17 @@ static class Program
                     PressToContinue();
                     goto mainScreenSelection;
                 }
+
+                var citiesPath = transconnect.Map.FindShortestPath(cityDeparture, cityArrival);
                 
                 var newOrder = new Order(DateTime.Now, DateTime.Now.Ticks.ToString(), clientWhoIsOrdering,
-                    cityDeparture, cityArrival);
+                    cityDeparture, cityArrival, citiesPath);
                 
-                
-                
+                clientWhoIsOrdering._orders.Add(newOrder);
+                transconnect.Orders.Add(newOrder);
+
                 break;
             
-
             //Leave
             case "X":
                 transconnect.SaveToJson();
