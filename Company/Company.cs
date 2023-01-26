@@ -25,7 +25,7 @@ public class Company
         //read orders from json
         var ordersJson = File.ReadAllText("../../../../Company/orders.json");
         _orders = JsonConvert.DeserializeObject<List<Order>>(ordersJson) ?? throw new InvalidOperationException();
-        _map = new Map();
+        //_map = new Map();
     }
     
     public Company(List<Client> clients)
