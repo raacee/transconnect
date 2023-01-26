@@ -4,22 +4,20 @@ public class City
 {
     public string _name;
     public Dictionary<City, int> _distances;
-    
-    public City(string name)
+
+    public City(string name, int i = 0, string oldName = "") // MARCHE PAS
     {
         _name = name.ToLower();
-        _distances = new Dictionary<City, int>();
+        _distances = new Dictionary<City, int>(0);
         string[] csv = File.ReadAllLines("../../../../Cities/distances.csv");
-        foreach (var cityInfo in csv)
+        foreach (var line in csv)
         {
-            var cityArray = cityInfo.Split(";");
-            if (cityArray[0].ToLower() == _name)
+            var cityInfo = line.Split(";");
+            var cityName = cityInfo[0];
+            var otherCityName = cityInfo[1];
+            if (cityName == name)
             {
-                _distances.Add(new City(cityArray[1]),Convert.ToInt32(cityArray[2]));
-            }
-            if (cityArray[1].ToLower() == _name)
-            {
-                _distances.Add(new City(cityArray[0]),Convert.ToInt32(cityArray[2]));
+                
             }
         }
     }
@@ -31,20 +29,21 @@ public class City
     }
 }
 
+
+//Graph of cities
 public class Map
 {
     public List<City> _cities { get; set; }
 
     public Map()
     {
-        var csv = File.ReadAllLines("../../../../Cities/distances.csv");
+        string[] csv = File.ReadAllLines("../../../../Cities/distances.csv");
         _cities = new List<City>(0);
         foreach (var line in csv)
         {
-            var cityName = line.Split(';')[0];
-            if (_cities.FindIndex(delegate(City city) { return city._name == cityName; }) == -1)
+            if (_cities.FindIndex(delegate(City city) { return city._name == line.Split(';')[0]; })>-1)
             {
-                _cities.Add(new City(cityName));
+                
             }
         }
     }

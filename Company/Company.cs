@@ -25,7 +25,7 @@ public class Company
         //read orders from json
         var ordersJson = File.ReadAllText("../../../../Company/orders.json");
         _orders = JsonConvert.DeserializeObject<List<Order>>(ordersJson) ?? throw new InvalidOperationException();
-        //_map = new Map();
+        _map = new Map();
     }
     
     public Company(List<Client> clients)
@@ -167,6 +167,49 @@ public class Company
             return;
         }
         _clients.Remove(clientToRemove);
+    }
+
+    public void SortByClientName()
+    {
+        _clients.Sort((client1, client2) => client1.CompareTo(client2));
+    }
+
+    public void SortByClientOrders()
+    {
+        _clients.Sort(delegate(Client client1, Client client2)
+        {
+            var sum1 = 0;
+            var sum2 = 0;
+
+            foreach (var order in client1._orders)
+            {
+                sum1 += order.Price;
+            }
+
+            foreach (var order in client2._orders)
+            {
+                sum2 += order.Price;
+            }
+
+            return sum2 - sum1;
+        });
+    }
+
+    public void DriverOrders(List<Employee> employees, int level)
+    {
+        foreach (var employee in employees)
+        {
+            if (employee.GetType() == typeof(Driver))
+            {
+                Console.WriteLine(employee);
+            }
+            DriverOrders(employee._subordinates, level + 1);
+        }
+    }
+
+    public void AddOrder(Order order)
+    {
+        _orders.Add(order);
     }
 }
     
