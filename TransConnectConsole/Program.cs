@@ -412,7 +412,7 @@ static class Program
                 var citiesPath = transconnect.Map.FindShortestPath(cityDeparture, cityArrival);
                 
                 var newOrder = new Order(DateTime.Now, DateTime.Now.Ticks.ToString(), clientWhoIsOrdering,
-                    cityDeparture, cityArrival, citiesPath);
+                    cityDeparture, cityArrival, citiesPath,0);
                 
                 clientWhoIsOrdering._orders.Add(newOrder);
                 transconnect.Orders.Add(newOrder);
