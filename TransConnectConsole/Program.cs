@@ -15,8 +15,8 @@ static class Program
                                "2 - Afficher un employé\n"+
                                "3 - Ajouter un employé\n" +
                                "4 - Retirer un employé\n" +
-                               "5 - Modifier un employé" +
-                               "6 - Afficher les clients" +
+                               "5 - Modifier un employé\n" +
+                               "6 - Afficher les clients\n" +
                                "7 - Ajouter un client\n" +
                                "8 - Retirer un client\n" +
                                "9 - Afficher les commandes\n" +
