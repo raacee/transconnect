@@ -73,13 +73,13 @@ public class Employee : Person
     public void DisplayModifiables()
     {
         Console.WriteLine(
-            "1 - Prénom" + _firstName + "\n"
-            + "2 - Nom de famille :" + _lastName + "\n"
+            "1 - Prénom : " + _firstName + "\n"
+            + "2 - Nom de famille : " + _lastName + "\n"
             + "3 - Téléphone : " + _phone + "\n"
-            + "4 - Addresse :" + _address + "\n"
-            + "5 - Adresse email :" + _email + "\n"
-            + "6 - Poste :" + _position + "\n"
-            + "7 - Salaire :" + _salary);
+            + "4 - Addresse : " + _address + "\n"
+            + "5 - Adresse email : " + _email + "\n"
+            + "6 - Poste : " + _position + "\n"
+            + "7 - Salaire : " + _salary);
     }
 }
 

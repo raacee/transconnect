@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Globalization;
+using System.Runtime.CompilerServices;
 using Cities;
 using Company;
 
@@ -33,7 +34,7 @@ static class Program
         switch (numStr)
         {
             //Display the company tree
-            case "1":Console.WriteLine(transconnect.HeadOfCompany);
+            case "1":
                 transconnect.PrintEmployeeTree();
                 PressToContinue();
                 goto mainScreenSelection;
@@ -80,11 +81,11 @@ static class Program
                 Console.WriteLine("1 - Femme");
                 var sex = (Sex) Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
-                Console.WriteLine("Entrer son nom de salaire");
+                Console.WriteLine("Entrer son salaire");
                 var salary = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
                 Console.WriteLine("Entrer sa date de naissance");
-                var birthDate = DateTime.Parse(Console.ReadLine() ?? string.Empty);
+                var birthDate = DateTime.Parse(Console.ReadLine() ?? string.Empty, new CultureInfo("fr-FR"));
                 Console.Clear();
                 Console.WriteLine("Entrer son numéro de téléphone");
                 var phone = Console.ReadLine();
@@ -127,10 +128,10 @@ static class Program
                     case "2":
                         Console.Clear();
                         Console.WriteLine("Entrer le nom de son supérieur");
-                        var supFirstName = Console.ReadLine();
+                        var supLastName = Console.ReadLine();
                         Console.Clear();
                         Console.WriteLine("Entrer le prénom de son supérieur");
-                        var supLastName = Console.ReadLine();
+                        var supFirstName= Console.ReadLine();
 
                         if (supLastName == null || supFirstName == null)
                         {
@@ -288,6 +289,10 @@ static class Program
                 foreach (var client in transconnect.Clients)
                 {
                     Console.WriteLine(client);
+                    foreach (var order in client._orders)
+                    {
+                        Console.WriteLine("\t"+order);                        
+                    }
                 }
                 break;
 
@@ -308,7 +313,7 @@ static class Program
                 var clientSex = (Sex) Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
                 Console.WriteLine("Entrer sa date de naissance");
-                var clientBirthDate = DateTime.Parse(Console.ReadLine() ?? string.Empty);
+                var clientBirthDate = DateTime.Parse(Console.ReadLine() ?? string.Empty,new CultureInfo("fr-FR"));
                 Console.Clear();
                 Console.WriteLine("Entrer son numéro de téléphone");
                 var clientPhone = Console.ReadLine();
