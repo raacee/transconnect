@@ -2,7 +2,7 @@ using Cities;
 
 namespace Company;
 
-public class Order
+public class Order : IComparable<Order>
 {
     private Client _client;
     private City _cityOfOrigin;
@@ -30,6 +30,11 @@ public class Order
         _driver = driver;
         _citiesShortestPath = _citiesPath;
         _price = price;
+    }
+
+    public int CompareTo(Order? other)
+    {
+        return (int) (this._price - other?.Price);
     }
 
     public override string ToString()

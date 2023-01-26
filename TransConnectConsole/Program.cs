@@ -22,6 +22,7 @@ static class Program
                                "8 - Retirer un client\n" +
                                "9 - Afficher les commandes\n" +
                                "10 - Ajouter une commande\n" +
+                               "11 - Statistiques" +
                                "X ou CTRL + C - Quitter";
 
         mainScreenSelection:
@@ -418,6 +419,31 @@ static class Program
                 transconnect.Orders.Add(newOrder);
 
                 break;
+            
+            case "11":
+                Console.WriteLine("1 - Afficher les clients par ordre alphabétique");
+                Console.WriteLine("2 - Afficher les clients par achats cumulés");
+                var clientsMenuStr = Console.ReadLine();
+                switch (clientsMenuStr)
+                {
+                    case "1":
+                        transconnect.SortByClientName();
+                        foreach (var client in transconnect.Clients)
+                        {
+                            Console.WriteLine(client);
+                        }
+
+                        break;
+                    case "2":
+                        transconnect.SortByClientOrders();
+                        foreach (var client in transconnect.Clients)
+                        {
+                            Console.WriteLine(client);
+                        }
+                        break;
+                }
+                PressToContinue();
+                goto mainScreenSelection;
             
             //Leave
             case "X":

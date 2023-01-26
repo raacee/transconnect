@@ -83,7 +83,7 @@ public class Employee : Person
     }
 }
 
-public class Client : Person
+public class Client : Person, IComparable<Client>
 {
     public List<Order> _orders { get; set; }
 
@@ -96,6 +96,20 @@ public class Client : Person
 
     public override string ToString()
     {
-        return _firstName + " " + _lastName;
+        var res = "";
+        
+        res += _firstName + " " + _lastName +"\n";
+
+        foreach (var order in _orders)
+        {
+            res += "\t" + order.Id + "\n" + order.Price;
+        }
+
+        return res;
+    }
+
+    public int CompareTo(Client? otherClient)
+    {
+        return String.CompareOrdinal(this._lastName + " " + this._firstName, otherClient?._lastName + " " + otherClient?._firstName);
     }
 }
