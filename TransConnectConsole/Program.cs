@@ -22,7 +22,7 @@ static class Program
                                "8 - Retirer un client\n" +
                                "9 - Afficher les commandes\n" +
                                "10 - Ajouter une commande\n" +
-                               "11 - Statistiques" +
+                               "11 - Statistiques\n" +
                                "X ou CTRL + C - Quitter";
 
         mainScreenSelection:
@@ -282,7 +282,6 @@ static class Program
                 {
                     Console.WriteLine("Le prénom ou le nom de famille est null");
                 }
-
                 break;
 
             //Display Clients
@@ -295,7 +294,10 @@ static class Program
                         Console.WriteLine("\t"+order);                        
                     }
                 }
-                break;
+                PressToContinue();
+                goto mainScreenSelection;
+
+
 
             //Add a client
             case "7":
@@ -363,7 +365,8 @@ static class Program
                 {
                     Console.WriteLine(order+"\n");
                 }
-                break;
+                PressToContinue();
+                goto mainScreenSelection;
 
             //Add order
             case "10":
@@ -417,12 +420,16 @@ static class Program
                 
                 clientWhoIsOrdering._orders.Add(newOrder);
                 transconnect.Orders.Add(newOrder);
+                PressToContinue();
+                goto mainScreenSelection;
 
-                break;
-            
+            //Statistics
             case "11":
                 Console.WriteLine("1 - Afficher les clients par ordre alphabétique");
                 Console.WriteLine("2 - Afficher les clients par achats cumulés");
+                Console.WriteLine("3 - Afficher le nombre de livraisons effectuées");
+                Console.WriteLine("4 - Afficher la moyenne des prix des commandes effectuées");
+                Console.WriteLine("5 - Afficher la liste des commandes d'un client");
                 var clientsMenuStr = Console.ReadLine();
                 switch (clientsMenuStr)
                 {
@@ -441,9 +448,18 @@ static class Program
                             Console.WriteLine(client);
                         }
                         break;
+                    case "3":
+                        Console.WriteLine(transconnect.Orders.Count);
+                        break;
+                    case "4":
+                        Console.WriteLine(transconnect.AverageOrdersPrice());
+                        break;
+                    case "5":
+                        break;
                 }
                 PressToContinue();
                 goto mainScreenSelection;
+                
             
             //Leave
             case "X":
@@ -455,6 +471,7 @@ static class Program
             default:
                 goto mainScreenSelection;
         }
+        
     }
 
     private static void PressToContinue()

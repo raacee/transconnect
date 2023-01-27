@@ -207,6 +207,16 @@ public class Company
         }
     }
 
+    public float AverageOrdersPrice()
+    {
+        var res = 0f;
+        for (int i = 0; i < _orders.Count; i++)
+        {
+            res += _orders[i].Price;
+        }
+        return res/_orders.Count;
+    }
+
     public void AddOrder(Order order)
     {
         _orders.Add(order);
