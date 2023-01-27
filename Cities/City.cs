@@ -3,12 +3,12 @@ namespace Cities;
 public class City
 {
     public string _name;
-    public List<Dictionary<City, int>> _distances;
+    public Dictionary<City, int> _distances;
 
     public City(string name, int i = 0, string oldName = "") // MARCHE PAS
     {
         _name = name.ToLower();
-        _distances = new List<Dictionary<City, int>>(0);
+        _distances = new Dictionary<City, int>(0);
         string[] csv = File.ReadAllLines("../../../../Cities/distances.csv");
         foreach (var line in csv)
         {
